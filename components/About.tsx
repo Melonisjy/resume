@@ -11,9 +11,9 @@ export default function About() {
         다양한 블록체인 기반 서비스를 개발한 경험이 있습니다.
       </p>
       <p className="text-[#222] leading-relaxed">
-        현재 제프(JEFF WORLD)에서 Frontend Developer로 근무하며, 게임 내 NFT
-        거래, 전송, 브릿지 등 블록체인 관련 기능을 개발하고 있습니다. 모노레포
-        환경에서의 효율적인 개발과 컴포넌트 공통화에 관심이 많습니다.
+        제프(JEFF WORLD)에서 블록체인 기반 게임 플랫폼의 프론트엔드 개발 경험이
+        있으며, 모노레포 환경에서의 효율적인 개발과 컴포넌트 공통화에 관심이
+        많습니다.
       </p>
     </Section>
   );
