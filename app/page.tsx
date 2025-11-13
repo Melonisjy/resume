@@ -9,6 +9,7 @@ import Education from "@/components/Education";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import DarkModeToggle from "@/components/DarkModeToggle";
+import ScrollProgress from "@/components/ScrollProgress";
 import { useRef } from "react";
 
 export default function Home() {
@@ -24,6 +25,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f5f5f0] dark:bg-[#0a0a0a] py-4 px-4 md:py-12 md:px-8 transition-colors duration-300">
+      {/* 스크롤 진행도 인디케이터 */}
+      <ScrollProgress />
       <div ref={containerRef} className="mx-auto max-w-4xl">
         {/* A4 Paper Container */}
         <motion.div
