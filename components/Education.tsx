@@ -27,16 +27,16 @@ export default function Education() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="border-l-2 border-[#999] pl-4 pb-4 md:pl-6 last:pb-0"
+            className="border-l-2 border-[#999] dark:border-[#444] pl-4 pb-4 md:pl-6 last:pb-0 transition-colors duration-300"
           >
             <div className="mb-1 flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
               <div>
-                <h3 className="font-heading text-xl font-semibold text-[#222]">
+                <h3 className="font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">
                   {edu.institution}
                 </h3>
-                <p className="text-[#666]">{edu.major}</p>
+                <p className="text-[#666] dark:text-[#aaa] transition-colors duration-300">{edu.major}</p>
               </div>
-              <span className="text-sm text-[#999] md:text-base">{edu.period}</span>
+              <span className="text-sm text-[#999] dark:text-[#666] md:text-base transition-colors duration-300">{edu.period}</span>
             </div>
           </motion.div>
         ))}

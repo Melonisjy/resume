@@ -38,11 +38,11 @@ export default function Experience() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="border-l-2 border-[#999] pl-4 pb-6 md:pl-6 last:pb-0"
+            className="border-l-2 border-[#999] dark:border-[#444] pl-4 pb-6 md:pl-6 last:pb-0 transition-colors duration-300"
           >
             <div className="mb-2 flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
               <div>
-                <h3 className="font-heading text-xl font-semibold text-[#222]">
+                <h3 className="font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">
                   {exp.title}
                 </h3>
                 {exp.link ? (
@@ -50,19 +50,19 @@ export default function Experience() {
                     href={exp.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#666] hover:text-[#222] transition-colors"
+                    className="text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
                   >
                     {exp.company}
                   </a>
                 ) : (
-                  <p className="text-[#666]">{exp.company}</p>
+                  <p className="text-[#666] dark:text-[#aaa] transition-colors duration-300">{exp.company}</p>
                 )}
               </div>
-              <span className="text-sm text-[#999] md:text-base">{exp.period}</span>
+              <span className="text-sm text-[#999] dark:text-[#666] md:text-base transition-colors duration-300">{exp.period}</span>
             </div>
-            <p className="mt-2 text-[#666] leading-relaxed">{exp.description}</p>
+            <p className="mt-2 text-[#666] dark:text-[#aaa] leading-relaxed transition-colors duration-300">{exp.description}</p>
             {exp.tech && (
-              <p className="mt-2 text-sm text-[#999]">
+              <p className="mt-2 text-sm text-[#999] dark:text-[#666] transition-colors duration-300">
                 <span className="font-semibold">기술 스택:</span> {exp.tech}
               </p>
             )}

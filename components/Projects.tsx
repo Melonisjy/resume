@@ -80,7 +80,7 @@ export default function Projects() {
     <>
       <Section id="projects" title="Projects">
         <div className="mb-8">
-          <h3 className="mb-4 font-heading text-xl font-semibold text-[#222]">회사 프로젝트</h3>
+          <h3 className="mb-4 font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">회사 프로젝트</h3>
           <div className="grid gap-6 md:grid-cols-2">
             {companyProjects.map((project, index) => (
               <motion.div
@@ -89,26 +89,26 @@ export default function Projects() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-sm border border-[#999] bg-[#fdfcf8] p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-sm border border-[#999] dark:border-[#444] bg-[#fdfcf8] dark:bg-[#1a1a1a] p-6 shadow-sm transition-all hover:shadow-md duration-300"
               >
                 <div className="mb-2 flex items-start justify-between">
-                  <h3 className="font-heading text-xl font-semibold text-[#222]">
+                  <h3 className="font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">
                     {project.name}
                   </h3>
                   {project.period && (
-                    <span className="text-xs text-[#999] whitespace-nowrap ml-2">
+                    <span className="text-xs text-[#999] dark:text-[#666] whitespace-nowrap ml-2 transition-colors duration-300">
                       {project.period}
                     </span>
                   )}
                 </div>
-                <p className="mb-4 text-sm text-[#666] leading-relaxed">
+                <p className="mb-4 text-sm text-[#666] dark:text-[#aaa] leading-relaxed transition-colors duration-300">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-sm border border-[#999] bg-white px-2 py-1 text-xs text-[#666]"
+                      className="rounded-sm border border-[#999] dark:border-[#444] bg-white dark:bg-[#2a2a2a] px-2 py-1 text-xs text-[#666] dark:text-[#aaa] transition-colors duration-300"
                     >
                       {tech}
                     </span>
@@ -120,7 +120,7 @@ export default function Projects() {
         </div>
 
         <div className="mb-8">
-          <h3 className="mb-4 font-heading text-xl font-semibold text-[#222]">팀 프로젝트</h3>
+          <h3 className="mb-4 font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">팀 프로젝트</h3>
           <div className="grid gap-6 md:grid-cols-2">
             {teamProjects.map((project, index) => (
               <motion.div
@@ -129,29 +129,29 @@ export default function Projects() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-sm border border-[#999] bg-[#fdfcf8] p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-sm border border-[#999] dark:border-[#444] bg-[#fdfcf8] dark:bg-[#1a1a1a] p-6 shadow-sm transition-all hover:shadow-md duration-300"
               >
                 <div className="mb-2 flex items-start justify-between">
-                  <h3 className="font-heading text-xl font-semibold text-[#222]">
+                  <h3 className="font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">
                     {project.name}
                   </h3>
                   {project.period && (
-                    <span className="text-xs text-[#999] whitespace-nowrap ml-2">
+                    <span className="text-xs text-[#999] dark:text-[#666] whitespace-nowrap ml-2 transition-colors duration-300">
                       {project.period}
                     </span>
                   )}
                 </div>
                 {project.award && (
-                  <p className="mb-2 text-xs font-semibold text-[#222]">🏆 {project.award}</p>
+                  <p className="mb-2 text-xs font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">🏆 {project.award}</p>
                 )}
-                <p className="mb-4 text-sm text-[#666] leading-relaxed">
+                <p className="mb-4 text-sm text-[#666] dark:text-[#aaa] leading-relaxed transition-colors duration-300">
                   {project.description}
                 </p>
                 <div className="mb-4 flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-sm border border-[#999] bg-white px-2 py-1 text-xs text-[#666]"
+                      className="rounded-sm border border-[#999] dark:border-[#444] bg-white dark:bg-[#2a2a2a] px-2 py-1 text-xs text-[#666] dark:text-[#aaa] transition-colors duration-300"
                     >
                       {tech}
                     </span>
@@ -163,7 +163,7 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#666] hover:text-[#222] transition-colors"
+                      className="text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
                     >
                       🔗 Live
                     </a>
@@ -173,7 +173,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#666] hover:text-[#222] transition-colors"
+                      className="text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
                     >
                       📁 GitHub
                     </a>
@@ -185,7 +185,7 @@ export default function Projects() {
         </div>
 
         <div>
-          <h3 className="mb-4 font-heading text-xl font-semibold text-[#222]">개인 프로젝트</h3>
+          <h3 className="mb-4 font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">개인 프로젝트</h3>
           <div className="grid gap-6 md:grid-cols-2">
             {personalProjects.map((project, index) => (
               <motion.div
@@ -194,26 +194,26 @@ export default function Projects() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-sm border border-[#999] bg-[#fdfcf8] p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-sm border border-[#999] dark:border-[#444] bg-[#fdfcf8] dark:bg-[#1a1a1a] p-6 shadow-sm transition-all hover:shadow-md duration-300"
               >
                 <div className="mb-2 flex items-start justify-between">
-                  <h3 className="font-heading text-xl font-semibold text-[#222]">
+                  <h3 className="font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">
                     {project.name}
                   </h3>
                   {project.period && (
-                    <span className="text-xs text-[#999] whitespace-nowrap ml-2">
+                    <span className="text-xs text-[#999] dark:text-[#666] whitespace-nowrap ml-2 transition-colors duration-300">
                       {project.period}
                     </span>
                   )}
                 </div>
-                <p className="mb-4 text-sm text-[#666] leading-relaxed">
+                <p className="mb-4 text-sm text-[#666] dark:text-[#aaa] leading-relaxed transition-colors duration-300">
                   {project.description}
                 </p>
                 <div className="mb-4 flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-sm border border-[#999] bg-white px-2 py-1 text-xs text-[#666]"
+                      className="rounded-sm border border-[#999] dark:border-[#444] bg-white dark:bg-[#2a2a2a] px-2 py-1 text-xs text-[#666] dark:text-[#aaa] transition-colors duration-300"
                     >
                       {tech}
                     </span>
@@ -225,7 +225,7 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#666] hover:text-[#222] transition-colors"
+                      className="text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
                     >
                       🔗 Live
                     </a>
@@ -235,7 +235,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#666] hover:text-[#222] transition-colors"
+                      className="text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
                     >
                       📁 GitHub
                     </a>

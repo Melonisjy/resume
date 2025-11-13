@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import DarkModeToggle from "@/components/DarkModeToggle";
 import { useRef } from "react";
 
 export default function Home() {
@@ -22,14 +23,14 @@ export default function Home() {
   const shadowIntensity = useTransform(scrollYProgress, [0, 1], [0.1, 0.2]);
 
   return (
-    <div className="min-h-screen bg-[#f5f5f0] py-4 px-4 md:py-12 md:px-8">
+    <div className="min-h-screen bg-[#f5f5f0] dark:bg-[#0a0a0a] py-4 px-4 md:py-12 md:px-8 transition-colors duration-300">
       <div ref={containerRef} className="mx-auto max-w-4xl">
         {/* A4 Paper Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative mx-auto bg-[#fdfcf8] shadow-[0_0_20px_rgba(0,0,0,0.1)] md:shadow-[0_0_40px_rgba(0,0,0,0.15)]"
+          className="relative mx-auto bg-[#fdfcf8] dark:bg-[#1a1a1a] shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_40px_rgba(255,255,255,0.05)] md:shadow-[0_0_40px_rgba(0,0,0,0.15)] dark:md:shadow-[0_0_60px_rgba(255,255,255,0.08)] transition-colors duration-300"
           style={{
             minHeight: "100vh",
             maxWidth: "100%",
@@ -38,9 +39,14 @@ export default function Home() {
             transformStyle: "preserve-3d",
           }}
         >
+          {/* Dark Mode Toggle Button */}
+          <div className="absolute top-6 right-6 z-50">
+            <DarkModeToggle />
+          </div>
+
           {/* Paper texture overlay */}
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.03]"
+            className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.05] transition-opacity duration-300"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)'/%3E%3C/svg%3E")`,
             }}

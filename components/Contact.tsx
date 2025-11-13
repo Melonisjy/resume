@@ -39,12 +39,12 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ scale: 1.05 }}
-            className="group rounded-sm border border-[#999] bg-[#fdfcf8] p-4 text-center transition-all hover:border-[#222] hover:shadow-md"
+            className="group rounded-sm border border-[#999] dark:border-[#444] bg-[#fdfcf8] dark:bg-[#1a1a1a] p-4 text-center transition-all hover:border-[#222] dark:hover:border-[#f5f5f0] hover:shadow-md duration-300"
           >
-            <div className="mb-1 text-sm font-semibold text-[#999]">
+            <div className="mb-1 text-sm font-semibold text-[#999] dark:text-[#666] transition-colors duration-300">
               {info.label}
             </div>
-            <div className="text-[#222] transition-colors group-hover:text-[#000]">
+            <div className="text-[#222] dark:text-[#f5f5f0] transition-colors group-hover:text-[#000] dark:group-hover:text-[#fff]">
               {info.value}
             </div>
           </motion.a>

@@ -21,14 +21,14 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="border-l-2 border-[#999] pl-4"
+            className="border-l-2 border-[#999] dark:border-[#444] pl-4 transition-colors duration-300"
           >
-            <h3 className="mb-3 font-heading text-xl font-semibold text-[#222]">
+            <h3 className="mb-3 font-heading text-xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">
               {skill.category}
             </h3>
             <ul className="space-y-2">
               {skill.items.map((item) => (
-                <li key={item} className="text-[#666]">
+                <li key={item} className="text-[#666] dark:text-[#aaa] transition-colors duration-300">
                   {item}
                 </li>
               ))}

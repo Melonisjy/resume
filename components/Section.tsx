@@ -24,11 +24,11 @@ export default function Section({ id, title, children }: SectionProps) {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="mb-4 font-heading text-2xl font-semibold text-[#222] md:mb-6 md:text-4xl"
+        className="mb-4 font-heading text-2xl font-semibold text-[#222] dark:text-[#f5f5f0] md:mb-6 md:text-4xl transition-colors duration-300"
       >
         {title}
       </motion.h2>
-      <div className="border-t border-[#999] pt-4 md:pt-6">{children}</div>
+      <div className="border-t border-[#999] dark:border-[#444] pt-4 md:pt-6 transition-colors duration-300">{children}</div>
     </motion.section>
   );
 }
