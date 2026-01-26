@@ -9,14 +9,12 @@ const contactInfo = [
     value: "dhy2458@gmail.com",
     href: "mailto:dhy2458@gmail.com",
   },
-  { label: "Phone", value: "010-9010-7221" },
   { label: "GitHub", value: "Melonisjy", href: "https://github.com/Melonisjy" },
   {
     label: "Velog",
     value: "meloncoder",
     href: "https://velog.io/@meloncoder/posts",
   },
-  { label: "Medium", value: "melonisjy", href: "https://medium.com/@dhy2458" },
   {
     label: "Tistory",
     value: "melon.sol",
