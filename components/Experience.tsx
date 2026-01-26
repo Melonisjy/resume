@@ -11,21 +11,28 @@ const experiences: Array<{
   tech?: string;
   link?: string;
 }> = [
-  {
-    title: "교육운영직무",
-    company: "경기도경제과학진흥원",
-    period: "2025.05 ~ 2025.10",
-    description: "공기업 교육운영직무로 근무. 교육 프로그램 기획 및 운영, 내년도 사업계획서 작성 등 교육 사업 전반을 담당. 교육과정 개발 및 관리, 교육생 관리, 교육 효과 분석 등 교육 운영 업무 수행.",
-  },
-  {
-    title: "Frontend Developer",
-    company: "제프 (JEFF WORLD)",
-    period: "2023.08 ~ 2024.11",
-    description: "블록체인 기반 게임 플랫폼의 프론트엔드 개발. NFT 마켓플레이스, 브릿지, 전송 기능 개발. 모노레포 환경에서의 효율적인 개발 및 공통 컴포넌트 UI 사이트 구축. 백오피스 프론트엔드 개발 및 홈페이지 리뉴얼 프로젝트 참여.",
-    tech: "Javascript, React, React-redux, Sass(Scss)",
-    link: "https://jeffworld.io",
-  },
-];
+    {
+      title: "Frontend Developer",
+      company: "엘림 주식회사 (기술개발팀)",
+      period: "2026.01 ~",
+      description: "사내 안전진단 웹 기반 툴의 프론트엔드 개발 및 유지보수 담당. 기존 외주로 개발된 시스템을 개선하며 요구사항 반영, UI/UX 개선, 기능 추가 작업 수행. 백엔드와 협업하여 데이터 연동 및 화면 구현을 진행.",
+      tech: "Typescript, Nextjs, Zustand, Tailwind CSS, Tanstack Query"
+    },
+    {
+      title: "교육운영직무",
+      company: "경기도경제과학진흥원 (신산업인재양성팀)",
+      period: "2025.05 ~ 2025.10",
+      description: "공기업 교육운영직무로 근무. 교육 프로그램 기획 및 운영, 내년도 사업계획서 작성 등 교육 사업 전반을 담당. 교육과정 개발 및 관리, 교육생 관리, 교육 효과 분석 등 교육 운영 업무 수행.",
+    },
+    {
+      title: "Frontend Developer",
+      company: "제프 (JEFF WORLD) (블록체인 DEV팀)",
+      period: "2023.08 ~ 2024.11",
+      description: "블록체인 기반 게임 플랫폼의 프론트엔드 개발. NFT 마켓플레이스, 브릿지, 전송 기능 개발. 모노레포 환경에서의 효율적인 개발 및 공통 컴포넌트 UI 사이트 구축. 백오피스 프론트엔드 개발 및 홈페이지 리뉴얼 프로젝트 참여.",
+      tech: "Javascript, React, React-redux, Sass(Scss)",
+      link: "https://jeffworld.io",
+    },
+  ];
 
 export default function Experience() {
   return (
