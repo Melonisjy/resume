@@ -5,10 +5,16 @@ import { motion } from "framer-motion";
 
 const skills = [
   { category: "Language", items: ["Javascript", "Typescript"] },
-  { category: "Framework", items: ["React"] },
-  { category: "Style", items: ["CSS", "Tailwind CSS", "Sass/Scss"] },
-  { category: "Collaboration", items: ["Notion", "Github", "Github Desktop"] },
+  { category: "Framework", items: ["React", "Nextjs"] },
+  { category: "State & Data", items: ["TanStack Query", "Zustand"] },
+  { category: "Data & API", items: ["Axios", "REST API"] },
+  { category: "Style", items: ["CSS", "Sass/Scss", "Tailwind CSS"] },
+  { category: "Architecture", items: ["Monorepo"] },
+  { category: "Version Control", items: ["Git", "Github"] },
+  { category: "Collaboration", items: ["Notion"] },
 ];
+
+
 
 export default function Skills() {
   return (
