@@ -11,11 +11,6 @@ const contactInfo = [
   },
   { label: "GitHub", value: "Melonisjy", href: "https://github.com/Melonisjy" },
   {
-    label: "Velog",
-    value: "meloncoder",
-    href: "https://velog.io/@meloncoder/posts",
-  },
-  {
     label: "Tistory",
     value: "melon.sol",
     href: "https://melon-is-jy.tistory.com/",
