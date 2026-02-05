@@ -47,6 +47,7 @@ const teamProjects = [
     award: "블록체인스쿨 대상",
     link: "https://props-frontend-eta.vercel.app/",
     github: "https://github.com/INSURSAND/INSURSAND-Frontend-v1",
+    story: "https://story.likelion.net/ko/articles/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84--INSURSAND-10970da1",
   },
   {
     name: "P2D (Play to Donate)",
@@ -96,6 +97,7 @@ interface Project {
   status?: string;
   link?: string;
   github?: string;
+  story?: string;
 }
 
 function ProjectList({ projects }: { projects: Project[] }) {
@@ -162,6 +164,16 @@ function ProjectList({ projects }: { projects: Project[] }) {
                 className="text-xs text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
               >
                 GitHub ↗
+              </a>
+            )}
+            {project.story && (
+              <a
+                href={project.story}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
+              >
+                Story ↗
               </a>
             )}
           </div>
