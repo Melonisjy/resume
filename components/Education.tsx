@@ -44,7 +44,7 @@ const awards = [
 export default function Education() {
   return (
     <Section id="education" title="Education">
-      <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
+      <div className="flex flex-col gap-4 border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
         {/* Education */}
         <motion.div
           initial={{ opacity: 0 }}

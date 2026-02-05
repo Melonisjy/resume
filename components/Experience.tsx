@@ -12,49 +12,49 @@ const experiences: Array<{
   tech?: string[];
   link?: string;
 }> = [
-  {
-    title: "Frontend Developer",
-    company: "엘림 주식회사",
-    period: "2026.01 ~",
-    description: "사내 안전진단 웹 기반 툴의 프론트엔드 개발 및 유지보수",
-    achievements: [
-      "외주 레거시 코드 리팩토링 및 유지보수성 개선",
-      "사용자 피드백 기반 UI/UX 개선 작업 진행",
-      "백엔드 협업을 통한 API 연동 및 화면 구현",
-    ],
-    tech: ["TypeScript", "Next.js", "Zustand", "Tailwind CSS", "TanStack Query"],
-  },
-  {
-    title: "교육운영",
-    company: "경기도경제과학진흥원",
-    period: "2025.05 ~ 2025.10",
-    description: "공기업 교육운영직무 (계약직)",
-    achievements: [
-      "교육 프로그램 기획 및 운영 담당",
-      "내년도 사업계획서 작성 참여",
-      "교육생 관리 및 교육 효과 분석",
-    ],
-  },
-  {
-    title: "Frontend Developer",
-    company: "제프 (JEFF WORLD)",
-    period: "2023.08 ~ 2024.11",
-    description: "블록체인 기반 게임 플랫폼의 프론트엔드 개발",
-    achievements: [
-      "NFT 마켓플레이스, 브릿지, 전송 기능 개발",
-      "모노레포 환경 구축 및 공통 컴포넌트 라이브러리 설계",
-      "백오피스 프론트엔드 개발",
-      "홈페이지 리뉴얼 프로젝트 참여",
-    ],
-    tech: ["JavaScript", "React", "Redux", "Sass"],
-    link: "https://jeffworld.io",
-  },
-];
+    {
+      title: "프론트엔드 개발",
+      company: "엘림 주식회사",
+      period: "2026.01 ~",
+      description: "사내 안전진단 웹 기반 툴의 프론트엔드 개발 및 유지보수",
+      achievements: [
+        "외주 레거시 코드 리팩토링 및 유지보수성 개선",
+        "사용자 피드백 기반 UI/UX 개선 작업 진행",
+        "백엔드 협업을 통한 API 연동 및 화면 구현",
+      ],
+      tech: ["TypeScript", "Next.js", "Zustand", "Tailwind CSS", "TanStack Query"],
+    },
+    {
+      title: "교육운영",
+      company: "경기도경제과학진흥원",
+      period: "2025.05 ~ 2025.10",
+      description: "공기업 교육운영직무 (계약직)",
+      achievements: [
+        "교육 프로그램 기획 및 운영 담당",
+        "내년도 사업계획서 작성 참여",
+        "교육생 관리 및 교육 효과 분석",
+      ],
+    },
+    {
+      title: "프론트엔드 개발",
+      company: "제프 (JEFF WORLD)",
+      period: "2023.08 ~ 2024.11",
+      description: "블록체인 기반 게임 플랫폼의 프론트엔드 개발",
+      achievements: [
+        "NFT 마켓플레이스, 브릿지, 전송 기능 개발",
+        "모노레포 환경 구축 및 공통 컴포넌트 라이브러리 설계",
+        "백오피스 프론트엔드 개발",
+        "홈페이지 리뉴얼 프로젝트 참여",
+      ],
+      tech: ["JavaScript", "React", "Redux", "Sass"],
+      link: "https://jeffworld.io",
+    },
+  ];
 
 export default function Experience() {
   return (
     <Section id="experience" title="Experience">
-      <div className="space-y-10 md:space-y-12">
+      <div className="space-y-10 md:space-y-12 flex flex-col gap-4">
         {experiences.map((exp, index) => (
           <motion.div
             key={index}

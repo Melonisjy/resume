@@ -9,7 +9,7 @@ const subStack = ["Zustand", "Redux", "TanStack Query", "Tailwind CSS", "Sass", 
 export default function Skills() {
   return (
     <Section id="skills" title="Skills">
-      <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
+      <div className="flex flex-col gap-4 border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
         {/* Main Stack */}
         <motion.div
           initial={{ opacity: 0 }}

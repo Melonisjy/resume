@@ -186,7 +186,7 @@ function ProjectList({ projects }: { projects: Project[] }) {
 export default function Projects() {
   return (
     <Section id="projects" title="Projects">
-      <div className="flex flex-col gap-10 border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
+      <div className="flex flex-col gap-7 border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
         {/* 회사 프로젝트 */}
         <motion.div
           initial={{ opacity: 0 }}
