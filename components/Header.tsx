@@ -42,7 +42,7 @@ export default function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="mb-8 border-b border-[#999] dark:border-[#444] pb-6 pt-4 md:mb-12 md:pb-8 md:pt-8 transition-colors duration-300"
+      className="mb-6 border-b border-[#999] dark:border-[#444] pb-4 pt-4 md:mb-10 md:pb-6 md:pt-6 transition-colors duration-300"
     >
       <div className="relative mb-2">
         <motion.h1
@@ -59,18 +59,10 @@ export default function Header() {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 2.5 }}
-        className="mb-2 text-xl text-[#666] dark:text-[#aaa] md:text-2xl transition-colors duration-300"
-      >
-        Frontend Engineer
-      </motion.p>
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 2.7 }}
         className="text-lg text-[#666] dark:text-[#aaa] transition-colors duration-300"
       >
-        React와 블록체인 기술로 혁신적인 웹 경험을 만드는 개발자
+        사용자 경험을 중심으로 웹 서비스를 구현하는 프론트엔드 개발자입니다.
       </motion.p>
     </motion.header>
   );
