@@ -51,7 +51,7 @@ export default function BlogPosts() {
           최근 작성한 글 —
         </motion.p>
 
-        <div className="space-y-3">
+        <div className="space-y-3 flex flex-col gap-1">
           {posts.map((post, index) => (
             <motion.div
               key={post.link}

@@ -56,7 +56,7 @@ export default function Education() {
           <p className="text-[#666] dark:text-[#aaa] text-sm mb-4 italic transition-colors duration-300">
             학력 —
           </p>
-          <div className="space-y-3">
+          <div className="space-y-3 flex flex-col gap-1">
             {educations.map((edu, index) => (
               <motion.div
                 key={index}
@@ -95,7 +95,7 @@ export default function Education() {
           <p className="text-[#666] dark:text-[#aaa] text-sm mb-4 italic transition-colors duration-300">
             수상 내역 —
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-3 flex flex-col gap-1">
             {awards.map((award, index) => (
               <motion.li
                 key={index}

@@ -102,7 +102,7 @@ interface Project {
 
 function ProjectList({ projects }: { projects: Project[] }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 flex flex-col gap-1">
       {projects.map((project, index) => (
         <motion.div
           key={index}
@@ -143,38 +143,42 @@ function ProjectList({ projects }: { projects: Project[] }) {
             <span className="text-xs text-[#888] dark:text-[#666] transition-colors duration-300">
               {project.tech.join(" · ")}
             </span>
-            {(project.link || project.github) && (
-              <span className="text-[#ccc] dark:text-[#444]">|</span>
-            )}
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
-              >
-                Live ↗
-              </a>
-            )}
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
-              >
-                GitHub ↗
-              </a>
-            )}
-            {project.story && (
-              <a
-                href={project.story}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
-              >
-                Story ↗
-              </a>
+            {(project.link || project.github || project.story) && (
+              <div className="flex flex-wrap gap-1.5 mt-1">
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full text-[#666] dark:text-[#aaa] border border-[#ccc] dark:border-[#555] hover:text-[#333] dark:hover:text-[#ddd] hover:border-[#999] dark:hover:border-[#777] transition-all duration-200"
+                  >
+                    <span>Live</span>
+                    <span className="text-[10px]">↗</span>
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full text-[#666] dark:text-[#aaa] border border-[#ccc] dark:border-[#555] hover:text-[#333] dark:hover:text-[#ddd] hover:border-[#999] dark:hover:border-[#777] transition-all duration-200"
+                  >
+                    <span>GitHub</span>
+                    <span className="text-[10px]">↗</span>
+                  </a>
+                )}
+                {project.story && (
+                  <a
+                    href={project.story}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full text-[#666] dark:text-[#aaa] border border-[#ccc] dark:border-[#555] hover:text-[#333] dark:hover:text-[#ddd] hover:border-[#999] dark:hover:border-[#777] transition-all duration-200"
+                  >
+                    <span>Story</span>
+                    <span className="text-[10px]">↗</span>
+                  </a>
+                )}
+              </div>
             )}
           </div>
         </motion.div>

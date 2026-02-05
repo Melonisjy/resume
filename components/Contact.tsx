@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <Section id="contact" title="Contact">
       <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
-        <div className="space-y-2">
+        <div className="space-y-2 flex flex-col gap-1">
           {contactInfo.map((info, index) => (
             <motion.div
               key={info.label}
