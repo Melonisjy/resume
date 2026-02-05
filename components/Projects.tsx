@@ -61,9 +61,18 @@ const teamProjects = [
 // 개인 프로젝트 (최신순)
 const personalProjects = [
   {
+    name: "킥-인 (KIKIN)",
+    description: "풋살 팀 경기 일정 관리 웹앱 — 팀 생성/초대, 출석 투표, 공지사항, 실시간 알림",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Cursor AI"],
+    period: "2025",
+    status: "개발중",
+    link: "https://kikin-gules.vercel.app/",
+    github: "https://github.com/Melonisjy/KIKIN",
+  },
+  {
     name: "운명가챠",
     description: "이름을 입력하면 내년 운명을 알려주는 모바일 웹앱",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Cursor AI"],
     period: "2025",
     link: "https://fategacha.vercel.app/",
     github: "https://github.com/Melonisjy/fategacha",
@@ -84,6 +93,7 @@ interface Project {
   tech: string[];
   period: string;
   award?: string;
+  status?: string;
   link?: string;
   github?: string;
 }
@@ -105,6 +115,11 @@ function ProjectList({ projects }: { projects: Project[] }) {
               <span className="text-[#222] dark:text-[#f5f5f0] font-medium transition-colors duration-300">
                 {project.name}
               </span>
+              {project.status && (
+                <span className="text-xs text-[#666] dark:text-[#aaa] border border-[#999] dark:border-[#555] px-1.5 py-0.5 rounded transition-colors duration-300">
+                  {project.status}
+                </span>
+              )}
               {project.award && (
                 <span className="text-xs text-[#222] dark:text-[#f5f5f0] font-medium transition-colors duration-300">
                   🏆 {project.award}
