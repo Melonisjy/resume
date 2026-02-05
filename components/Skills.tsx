@@ -4,7 +4,7 @@ import Section from "./Section";
 import { motion } from "framer-motion";
 
 const mainStack = ["TypeScript", "React", "Next.js"];
-const subStack = ["Zustand", "TanStack Query", "Tailwind CSS", "Monorepo"];
+const subStack = ["Zustand", "Redux", "TanStack Query", "Tailwind CSS", "Sass", "Monorepo"];
 
 export default function Skills() {
   return (
