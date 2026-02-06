@@ -144,16 +144,21 @@ function ProjectList({ projects }: { projects: Project[] }) {
               {project.tech.join(" · ")}
             </span>
             {(project.link || project.github || project.story) && (
-              <div className="flex flex-wrap gap-1.5 mt-1">
+              <div className="flex flex-wrap gap-2 mt-2">
                 {project.link && (
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full text-[#666] dark:text-[#aaa] border border-[#ccc] dark:border-[#555] hover:text-[#333] dark:hover:text-[#ddd] hover:border-[#999] dark:hover:border-[#777] transition-all duration-200"
+                    className="group relative inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-[#e8f5e9] dark:bg-[#1a2e1a] text-[#2e7d32] dark:text-[#81c784] border border-[#c8e6c9] dark:border-[#2e5a2e] hover:bg-[#c8e6c9] dark:hover:bg-[#2e4a2e] hover:-translate-y-0.5 hover:scale-105 active:scale-100 transition-all duration-200"
                   >
-                    <span>Live</span>
-                    <span className="text-[10px]">↗</span>
+                    <span className="relative flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 bg-[#4caf50] dark:bg-[#81c784] rounded-full animate-pulse" />
+                      Live
+                    </span>
+                    <svg className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
                   </a>
                 )}
                 {project.github && (
@@ -161,10 +166,15 @@ function ProjectList({ projects }: { projects: Project[] }) {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full text-[#666] dark:text-[#aaa] border border-[#ccc] dark:border-[#555] hover:text-[#333] dark:hover:text-[#ddd] hover:border-[#999] dark:hover:border-[#777] transition-all duration-200"
+                    className="group relative inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-[#f5f5f5] dark:bg-[#2a2a2a] text-[#555] dark:text-[#bbb] border border-[#ddd] dark:border-[#444] hover:bg-[#eee] dark:hover:bg-[#333] hover:-translate-y-0.5 hover:scale-105 active:scale-100 transition-all duration-200"
                   >
-                    <span>GitHub</span>
-                    <span className="text-[10px]">↗</span>
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>Code</span>
+                    <svg className="w-3 h-3 opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
                   </a>
                 )}
                 {project.story && (
@@ -172,10 +182,15 @@ function ProjectList({ projects }: { projects: Project[] }) {
                     href={project.story}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full text-[#666] dark:text-[#aaa] border border-[#ccc] dark:border-[#555] hover:text-[#333] dark:hover:text-[#ddd] hover:border-[#999] dark:hover:border-[#777] transition-all duration-200"
+                    className="group relative inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-[#fff8e1] dark:bg-[#2e2a1a] text-[#f57c00] dark:text-[#ffb74d] border border-[#ffe0b2] dark:border-[#5a4a2e] hover:bg-[#ffecb3] dark:hover:bg-[#3e3a2a] hover:-translate-y-0.5 hover:scale-105 active:scale-100 transition-all duration-200"
                   >
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
                     <span>Story</span>
-                    <span className="text-[10px]">↗</span>
+                    <svg className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
                   </a>
                 )}
               </div>
