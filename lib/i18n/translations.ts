@@ -4,7 +4,7 @@ export const translations = {
   header: {
     name: {
       ko: ["이", "주", "열"],
-      en: ["J", "u", "yeol Lee"],
+      en: ["Joo", "yeol Lee"],
     },
     subtitle: {
       ko: "사용자 경험을 중심으로 웹 서비스를 구현하는 프론트엔드 개발자입니다.",
