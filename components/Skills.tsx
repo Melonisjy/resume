@@ -2,14 +2,19 @@
 
 import Section from "./Section";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { translations } from "@/lib/i18n/translations";
 
 const mainStack = ["TypeScript", "React", "Next.js"];
 const subStack = ["Zustand", "Redux", "TanStack Query", "Tailwind CSS", "Sass", "Monorepo", "Cursor AI"];
 
 export default function Skills() {
+  const { lang } = useLanguage();
+  const t = translations.skills;
+
   return (
-    <Section id="skills" title="Skills">
-      <div className="flex flex-col gap-4 border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
+    <Section id="skills" title={t.title[lang]}>
+      <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
         {/* Main Stack */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -19,7 +24,7 @@ export default function Skills() {
           className="mb-6"
         >
           <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
-            주로 사용하는 기술 —
+            {t.mainLabel[lang]}
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
             {mainStack.map((skill, index) => (
@@ -47,7 +52,7 @@ export default function Skills() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
-            함께 사용하는 것들 —
+            {t.subLabel[lang]}
           </p>
           <div className="flex flex-wrap gap-x-3 gap-y-2">
             {subStack.map((skill, index) => (

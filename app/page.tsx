@@ -10,6 +10,7 @@ import Projects from "@/components/Projects";
 import BlogPosts from "@/components/BlogPosts";
 import Contact from "@/components/Contact";
 import DarkModeToggle from "@/components/DarkModeToggle";
+import LanguageToggle from "@/components/LanguageToggle";
 import ScrollProgress from "@/components/ScrollProgress";
 import { useRef } from "react";
 
@@ -43,8 +44,9 @@ export default function Home() {
             transformStyle: "preserve-3d",
           }}
         >
-          {/* Dark Mode Toggle Button */}
-          <div className="absolute top-6 right-6 z-50">
+          {/* Toggle Buttons */}
+          <div className="absolute top-6 right-6 z-50 flex gap-2">
+            <LanguageToggle />
             <DarkModeToggle />
           </div>
 

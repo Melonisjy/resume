@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { translations } from "@/lib/i18n/translations";
 
 const SignatureText = ({
   children,
@@ -37,6 +39,10 @@ const SignatureText = ({
 };
 
 export default function Header() {
+  const { lang } = useLanguage();
+  const t = translations.header;
+  const nameChars = t.name[lang];
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -46,23 +52,27 @@ export default function Header() {
     >
       <div className="relative mb-2">
         <motion.h1
+          key={lang}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.1 }}
           className="font-heading text-4xl font-bold text-[#222] dark:text-[#f5f5f0] md:text-6xl transition-colors duration-300"
         >
-          <SignatureText delay={0.05}>이</SignatureText>
-          <SignatureText delay={0.85}>주</SignatureText>
-          <SignatureText delay={1.65}>열</SignatureText>
+          {nameChars.map((char, i) => (
+            <SignatureText key={`${lang}-${i}`} delay={0.05 + i * 0.8}>
+              {char}
+            </SignatureText>
+          ))}
         </motion.h1>
       </div>
       <motion.p
+        key={`subtitle-${lang}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 2.7 }}
         className="text-lg text-[#666] dark:text-[#aaa] transition-colors duration-300"
       >
-        사용자 경험을 중심으로 웹 서비스를 구현하는 프론트엔드 개발자입니다.
+        {t.subtitle[lang]}
       </motion.p>
     </motion.header>
   );

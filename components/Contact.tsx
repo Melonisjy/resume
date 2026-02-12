@@ -2,6 +2,8 @@
 
 import Section from "./Section";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { translations } from "@/lib/i18n/translations";
 
 const contactInfo = [
   {
@@ -27,10 +29,13 @@ const contactInfo = [
 ];
 
 export default function Contact() {
+  const { lang } = useLanguage();
+  const t = translations.contact;
+
   return (
-    <Section id="contact" title="Contact">
+    <Section id="contact" title={t.title[lang]}>
       <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
-        <div className="space-y-2 flex flex-col gap-1">
+        <div className="space-y-2">
           {contactInfo.map((info, index) => (
             <motion.div
               key={info.label}

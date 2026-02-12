@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Section from "./Section";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { translations } from "@/lib/i18n/translations";
 
 interface BlogPost {
   title: string;
@@ -13,6 +15,8 @@ interface BlogPost {
 export default function BlogPosts() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const { lang } = useLanguage();
+  const t = translations.blog;
 
   useEffect(() => {
     fetch("/api/blog-posts")
@@ -26,9 +30,9 @@ export default function BlogPosts() {
 
   if (loading) {
     return (
-      <Section id="blog" title="Blog">
+      <Section id="blog" title={t.title[lang]}>
         <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
-          <p className="text-[#666] dark:text-[#aaa] text-sm italic">불러오는 중...</p>
+          <p className="text-[#666] dark:text-[#aaa] text-sm italic">{t.loading[lang]}</p>
         </div>
       </Section>
     );
@@ -39,7 +43,7 @@ export default function BlogPosts() {
   }
 
   return (
-    <Section id="blog" title="Blog">
+    <Section id="blog" title={t.title[lang]}>
       <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
         <motion.p
           initial={{ opacity: 0 }}
@@ -48,10 +52,10 @@ export default function BlogPosts() {
           transition={{ duration: 0.5 }}
           className="text-[#666] dark:text-[#aaa] text-sm mb-4 italic transition-colors duration-300"
         >
-          최근 작성한 글 —
+          {t.recentLabel[lang]}
         </motion.p>
 
-        <div className="space-y-3 flex flex-col gap-1">
+        <div className="space-y-3">
           {posts.map((post, index) => (
             <motion.div
               key={post.link}
@@ -70,7 +74,9 @@ export default function BlogPosts() {
                   {post.title} <span className="text-[#999] dark:text-[#666]">↗</span>
                 </span>
                 <span className="text-sm text-[#999] dark:text-[#666] font-mono transition-colors duration-300">
-                  {new Date(post.pubDate).toLocaleDateString("ko-KR")}
+                  {new Date(post.pubDate).toLocaleDateString(
+                    lang === "ko" ? "ko-KR" : "en-US"
+                  )}
                 </span>
               </a>
             </motion.div>
@@ -87,7 +93,7 @@ export default function BlogPosts() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="inline-block mt-6 text-sm text-[#999] dark:text-[#666] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors duration-300"
         >
-          더 많은 글 보기 →
+          {t.moreLink[lang]}
         </motion.a>
       </div>
     </Section>
