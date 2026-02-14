@@ -106,11 +106,20 @@ export const translations = {
             en: "API integration and screen implementation through backend collaboration",
           },
         ],
-        tech: ["TypeScript", "Next.js", "Zustand", "Tailwind CSS", "TanStack Query"],
+        tech: [
+          "TypeScript",
+          "Next.js",
+          "Zustand",
+          "Tailwind CSS",
+          "TanStack Query",
+        ],
       },
       {
         title: { ko: "교육운영", en: "Education Operations" },
-        company: { ko: "경기도경제과학진흥원", en: "Gyeonggi Economic Science Promotion Agency" },
+        company: {
+          ko: "경기도경제과학진흥원",
+          en: "Gyeonggi Economic Science Promotion Agency",
+        },
         period: { ko: "2025.05 ~ 2025.10", en: "May 2025 ~ Oct 2025" },
         description: {
           ko: "공기업 교육운영직무 (계약직)",
@@ -318,7 +327,13 @@ export const translations = {
           ko: "풋살 팀 경기 일정 관리 웹앱 — 팀 생성/초대, 출석 투표, 공지사항, 실시간 알림",
           en: "Futsal team match management webapp — Team creation, attendance voting, announcements, real-time notifications",
         },
-        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Cursor AI"],
+        tech: [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Supabase",
+          "Cursor AI",
+        ],
         period: "2025",
         status: { ko: "개발중", en: "In Dev" },
         link: "https://kikin-gules.vercel.app/",
@@ -350,9 +365,14 @@ export const translations = {
   },
   blog: {
     title: { ko: "Blog", en: "Blog" },
+    tagline: {
+      ko: "기술과 생각을 기록하는 공간",
+      en: "A space for recording tech and thoughts",
+    },
+    techStack: "Next.js App Router · MDX · Static Generation",
     loading: { ko: "불러오는 중...", en: "Loading..." },
-    recentLabel: { ko: "최근 작성한 글 —", en: "Recent Posts —" },
-    moreLink: { ko: "더 많은 글 보기 →", en: "View More Posts →" },
+    recentLabel: { ko: "최근 글 —", en: "Recent —" },
+    moreLink: { ko: "블로그 바로가기 →", en: "Visit Blog →" },
   },
   archive: {
     title: { ko: "Archive", en: "Archive" },
