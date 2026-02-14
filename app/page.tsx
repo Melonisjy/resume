@@ -76,6 +76,11 @@ export default function Home() {
             <Projects />
             <BlogPosts />
             <Archive />
+
+            {/* Last Updated */}
+            <p className="mt-12 pt-4 border-t border-[#ddd] dark:border-[#333] text-xs text-[#bbb] dark:text-[#555] text-right font-mono transition-colors duration-300">
+              Last updated: 2026.02
+            </p>
           </motion.div>
 
           {/* Page turn shadow effect */}
