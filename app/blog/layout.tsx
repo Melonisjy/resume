@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BlogDarkModeToggle from "@/components/BlogDarkModeToggle";
 
 export default function BlogLayout({
   children,
@@ -34,6 +35,7 @@ export default function BlogLayout({
             >
               ← Resume
             </Link>
+            <BlogDarkModeToggle />
           </div>
         </nav>
         {children}
