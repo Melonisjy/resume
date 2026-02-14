@@ -35,7 +35,7 @@ export default function BlogPosts() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="mb-1 scroll-mt-20 md:mb-3"
+      className="mb-8 scroll-mt-20 md:mb-12"
     >
       {/* Title + CTA */}
       <div className="flex items-baseline justify-between mb-3 md:mb-4">
