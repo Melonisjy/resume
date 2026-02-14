@@ -60,12 +60,12 @@ export const translations = {
       },
       {
         keyword: {
-          ko: "팀과 함께 만드는 것",
-          en: "Building Together with the Team",
+          ko: "팀 컨벤션과 규칙을 만드는 것",
+          en: "Establishing Team Conventions",
         },
         note: {
-          ko: "백엔드와 API 설계부터 협업하며 더 나은 결과를 만듭니다",
-          en: "Collaborates with backend from API design to deliver better results",
+          ko: "커밋 메시지, 브랜치 네이밍, 개발 규칙을 정하고 지키는 걸 좋아합니다",
+          en: "Enjoys defining and following commit messages, branch naming, and dev rules",
         },
       },
     ],
