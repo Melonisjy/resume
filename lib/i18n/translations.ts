@@ -354,6 +354,13 @@ export const translations = {
     recentLabel: { ko: "최근 작성한 글 —", en: "Recent Posts —" },
     moreLink: { ko: "더 많은 글 보기 →", en: "View More Posts →" },
   },
+  archive: {
+    title: { ko: "Archive", en: "Archive" },
+    description: {
+      ko: "이전 플랫폼에서 작성한 글 —",
+      en: "Posts from previous platforms —",
+    },
+  },
   contact: {
     title: { ko: "Contact", en: "Contact" },
   },
