@@ -103,8 +103,11 @@ export default function BlogPosts() {
                       <span className="text-[#999] dark:text-[#666] transition-colors duration-300">
                         ·
                       </span>
-                      <span className="text-[#222] dark:text-[#f5f5f0] group-hover:text-[#666] dark:group-hover:text-[#aaa] transition-colors duration-300">
+                      <span className="text-[#222] dark:text-[#f5f5f0] group-hover:text-[#666] dark:group-hover:text-[#aaa] transition-colors duration-300 flex-1">
                         {post.title}
+                      </span>
+                      <span className="text-xs text-[#bbb] dark:text-[#555] font-mono shrink-0 transition-colors duration-300">
+                        {post.date}
                       </span>
                     </a>
                   </motion.div>
