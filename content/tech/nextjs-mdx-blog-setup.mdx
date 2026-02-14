@@ -1,0 +1,40 @@
+---
+title: "Next.js App Router에서 MDX 블로그 구축하기"
+date: "2026-02-14"
+description: "Next.js App Router와 MDX를 활용해 정적 블로그를 구축한 과정을 정리했다."
+category: "tech"
+---
+
+## 배경
+
+포트폴리오 사이트에 블로그를 붙이고 싶었다. 외부 플랫폼(Velog, Tistory) 대신 직접 관리하는 블로그를 만들기로 했다.
+
+## 기술 선택
+
+- **Next.js App Router** — 이미 포트폴리오에서 사용 중
+- **MDX** — 마크다운 + JSX, 기술 블로그에 적합
+- **gray-matter** — frontmatter 파싱
+- **next-mdx-remote** — 서버에서 MDX 렌더링
+
+## 구현
+
+파일 기반으로 포스트를 관리한다. `content/tech/` 또는 `content/thoughts/` 디렉토리에 `.mdx` 파일을 추가하면 자동으로 블로그에 노출된다.
+
+```typescript
+// lib/posts.ts
+export function getAllPosts(): PostMeta[] {
+  const techPosts = getPostsFromDirectory("tech");
+  const thoughtsPosts = getPostsFromDirectory("thoughts");
+  return [...techPosts, ...thoughtsPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
+```
+
+`generateStaticParams`로 빌드 시 모든 포스트 경로를 미리 생성한다. SEO를 위해 `generateMetadata`로 각 포스트의 메타데이터도 동적으로 설정한다.
+
+## 정리
+
+- 파일 기반 MDX 블로그는 CMS 없이도 충분히 관리 가능하다
+- App Router의 `generateStaticParams` + `generateMetadata` 조합이 깔끔하다
+- 카테고리는 디렉토리 구조로 자연스럽게 분리된다
