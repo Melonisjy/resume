@@ -320,6 +320,16 @@ export const translations = {
     ],
     personalProjects: [
       {
+        name: { ko: "Resume", en: "Resume" },
+        description: {
+          ko: "직접 설계·개발한 이력서 웹사이트 — 한/영 전환, 다크모드, MDX 블로그, PDF 출력 지원",
+          en: "Self-designed resume website — i18n, dark mode, MDX blog, PDF print support",
+        },
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "MDX"],
+        period: "2026",
+        github: "https://github.com/Melonisjy/resume",
+      },
+      {
         name: { ko: "킥-인 (KIKIN)", en: "KIKIN" },
         description: {
           ko: "풋살 팀 경기 일정 관리 웹앱 — 팀 생성/초대, 출석 투표, 공지사항, 실시간 알림",
