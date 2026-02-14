@@ -10,7 +10,7 @@ export default function DarkModeToggle() {
     setMounted(true);
     // 저장된 테마 불러오기 (기본값: 라이트 모드)
     const savedTheme = localStorage.getItem("theme");
-    
+
     if (savedTheme === "dark") {
       setIsDark(true);
       document.documentElement.classList.add("dark");
@@ -24,17 +24,15 @@ export default function DarkModeToggle() {
   const toggleDarkMode = () => {
     const newIsDark = !isDark;
     setIsDark(newIsDark);
-    
+
     const html = document.documentElement;
-    
+
     if (newIsDark) {
       html.classList.add("dark");
       localStorage.setItem("theme", "dark");
-      console.log("Dark mode enabled", html.classList.contains("dark"));
     } else {
       html.classList.remove("dark");
       localStorage.setItem("theme", "light");
-      console.log("Light mode enabled", html.classList.contains("dark"));
     }
   };
 
@@ -84,4 +82,3 @@ export default function DarkModeToggle() {
     </button>
   );
 }
-

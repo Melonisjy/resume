@@ -245,7 +245,6 @@ export const translations = {
     companyLabel: { ko: "회사 프로젝트 —", en: "Company Projects —" },
     teamLabel: { ko: "팀 프로젝트 —", en: "Team Projects —" },
     personalLabel: { ko: "개인 프로젝트 —", en: "Personal Projects —" },
-    statusDev: { ko: "개발중", en: "In Dev" },
     companyProjects: [
       {
         name: { ko: "Homepage Renewal", en: "Homepage Renewal" },
@@ -388,8 +387,5 @@ export const translations = {
       ko: "이전 플랫폼에서 작성한 글 —",
       en: "Posts from previous platforms —",
     },
-  },
-  contact: {
-    title: { ko: "Contact", en: "Contact" },
   },
 } as const;
