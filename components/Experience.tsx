@@ -28,23 +28,23 @@ export default function Experience() {
               {/* Header */}
               <div className="mb-4 flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
                 <div>
-                  <h3 className="font-heading text-2xl md:text-3xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">
-                    {exp.title[lang]}
-                  </h3>
                   {link ? (
                     <a
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lg text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors underline underline-offset-2"
+                      className="font-heading text-2xl md:text-3xl font-semibold text-[#222] dark:text-[#f5f5f0] hover:text-[#666] dark:hover:text-[#aaa] transition-colors duration-300"
                     >
-                      {exp.company[lang]} ↗
+                      {exp.company[lang]} <span className="text-[#999] dark:text-[#666]">↗</span>
                     </a>
                   ) : (
-                    <p className="text-lg text-[#666] dark:text-[#aaa] transition-colors duration-300">
+                    <h3 className="font-heading text-2xl md:text-3xl font-semibold text-[#222] dark:text-[#f5f5f0] transition-colors duration-300">
                       {exp.company[lang]}
-                    </p>
+                    </h3>
                   )}
+                  <p className="text-lg text-[#666] dark:text-[#aaa] transition-colors duration-300">
+                    {exp.title[lang]}
+                  </p>
                 </div>
                 <span className="text-sm text-[#999] dark:text-[#666] md:text-base font-mono transition-colors duration-300">
                   {exp.period[lang]}

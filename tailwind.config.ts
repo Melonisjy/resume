@@ -15,8 +15,8 @@ const config: Config = {
         border: "#999",
       },
       fontFamily: {
-        heading: ["var(--font-playfair)", "serif"],
-        body: ["var(--font-inter)", "sans-serif"],
+        heading: ["\"Pretendard Variable\"", "Pretendard", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        body: ["\"Pretendard Variable\"", "Pretendard", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
     },
   },

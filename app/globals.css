@@ -18,8 +18,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-border: var(--border);
-  --font-heading: var(--font-playfair);
-  --font-body: var(--font-inter);
+  --font-heading: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * {
@@ -31,7 +31,7 @@
 body {
   background: #f5f5f0;
   color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
 }
 
@@ -45,7 +45,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-playfair), serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
 }
 
 /* MDX Blog Post Typography */
@@ -56,7 +57,7 @@ h6 {
 }
 
 .prose-custom h2 {
-  font-family: var(--font-playfair), serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2.5rem;
@@ -65,7 +66,7 @@ h6 {
 }
 
 .prose-custom h3 {
-  font-family: var(--font-playfair), serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 2rem;
