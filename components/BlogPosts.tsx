@@ -8,8 +8,9 @@ import { translations } from "@/lib/i18n/translations";
 
 interface BlogPost {
   title: string;
-  link: string;
-  pubDate: string;
+  slug: string;
+  date: string;
+  category: string;
 }
 
 export default function BlogPosts() {
@@ -32,7 +33,9 @@ export default function BlogPosts() {
     return (
       <Section id="blog" title={t.title[lang]}>
         <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
-          <p className="text-[#666] dark:text-[#aaa] text-sm italic">{t.loading[lang]}</p>
+          <p className="text-[#666] dark:text-[#aaa] text-sm italic">
+            {t.loading[lang]}
+          </p>
         </div>
       </Section>
     );
@@ -58,35 +61,34 @@ export default function BlogPosts() {
         <div className="space-y-3">
           {posts.map((post, index) => (
             <motion.div
-              key={post.link}
+              key={post.slug}
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
               <a
-                href={post.link}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/blog/${post.slug}`}
                 className="group flex flex-col md:flex-row md:items-center md:justify-between gap-1"
               >
                 <span className="text-[#222] dark:text-[#f5f5f0] group-hover:text-[#666] dark:group-hover:text-[#aaa] transition-colors duration-300">
-                  {post.title} <span className="text-[#999] dark:text-[#666]">↗</span>
+                  {post.title}
                 </span>
-                <span className="text-sm text-[#999] dark:text-[#666] font-mono transition-colors duration-300">
-                  {new Date(post.pubDate).toLocaleDateString(
-                    lang === "ko" ? "ko-KR" : "en-US"
-                  )}
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs text-[#999] dark:text-[#666] font-mono transition-colors duration-300">
+                    {post.category}
+                  </span>
+                  <span className="text-sm text-[#999] dark:text-[#666] font-mono tabular-nums transition-colors duration-300">
+                    {post.date}
+                  </span>
+                </div>
               </a>
             </motion.div>
           ))}
         </div>
 
         <motion.a
-          href="https://velog.io/@meloncoder/posts"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/blog"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
