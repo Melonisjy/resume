@@ -1,17 +1,17 @@
-import { NextResponse } from 'next/server';
-import Parser from 'rss-parser';
+import { NextResponse } from "next/server";
+import { getAllPosts } from "@/lib/posts";
 
 export async function GET() {
   try {
-    const parser = new Parser();
-    const feed = await parser.parseURL('https://v2.velog.io/rss/@meloncoder');
-    const posts = feed.items.slice(0, 3).map((item) => ({
-      title: item.title,
-      link: item.link,
-      pubDate: item.pubDate,
+    const allPosts = getAllPosts();
+    const recentPosts = allPosts.slice(0, 3).map((post) => ({
+      title: post.title,
+      slug: post.slug,
+      date: post.date,
+      category: post.category,
     }));
-    return NextResponse.json(posts);
-  } catch (error) {
+    return NextResponse.json(recentPosts);
+  } catch {
     return NextResponse.json([], { status: 500 });
   }
 }
