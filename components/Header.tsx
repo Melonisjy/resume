@@ -74,6 +74,28 @@ export default function Header() {
       >
         {t.subtitle[lang]}
       </motion.p>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 2.7 }}
+        className="flex items-center gap-4 mt-2"
+      >
+        <a
+          href="mailto:dhy2458@gmail.com"
+          className="text-sm text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors duration-300"
+        >
+          dhy2458@gmail.com
+        </a>
+        <span className="text-[#999] dark:text-[#666] text-sm transition-colors duration-300">·</span>
+        <a
+          href="https://github.com/Melonisjy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors duration-300"
+        >
+          GitHub <span className="text-[#999] dark:text-[#666]">↗</span>
+        </a>
+      </motion.div>
     </motion.header>
   );
 }
