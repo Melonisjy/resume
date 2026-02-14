@@ -50,7 +50,7 @@ export default function SideNav() {
   };
 
   return (
-    <nav className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-end gap-3">
+    <nav className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-end gap-3 print:!hidden">
       {sections.map(({ id, label }) => (
         <button
           key={id}

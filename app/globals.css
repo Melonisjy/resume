@@ -164,3 +164,56 @@ h6 {
 .dark .prose-custom hr {
   border-top-color: #333;
 }
+
+/* Print Styles */
+@media print {
+  /* 기본 리셋 */
+  body {
+    background: white !important;
+    color: #222 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 페이지 배경/그림자 제거, 여백 최적화 */
+  .min-h-screen {
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  /* A4 종이 컨테이너 그림자 제거 */
+  .min-h-screen > div > div {
+    box-shadow: none !important;
+    padding: 1.5rem !important;
+  }
+
+  /* 불필요한 UI 요소 숨김 */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* 섹션 간 페이지 브레이크 방지 */
+  section {
+    break-inside: avoid;
+  }
+
+  /* 링크 URL 표시하지 않음 (깔끔하게) */
+  a::after {
+    content: none !important;
+  }
+
+  /* 애니메이션 제거 */
+  * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* 다크모드 색상 강제 라이트 */
+  .dark {
+    --background: white;
+    --foreground: #222;
+    --border: #999;
+  }
+}
