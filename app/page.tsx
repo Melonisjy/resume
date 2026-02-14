@@ -12,6 +12,7 @@ import Archive from "@/components/Archive";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
 import ScrollProgress from "@/components/ScrollProgress";
+import SideNav from "@/components/SideNav";
 import { useRef } from "react";
 
 export default function Home() {
@@ -29,6 +30,8 @@ export default function Home() {
     <div className="min-h-screen bg-[#f5f5f0] dark:bg-[#0a0a0a] py-4 px-4 md:py-12 md:px-8 transition-colors duration-300">
       {/* 스크롤 진행도 인디케이터 */}
       <ScrollProgress />
+      {/* 사이드 네비게이션 */}
+      <SideNav />
       <div ref={containerRef} className="mx-auto max-w-4xl">
         {/* A4 Paper Container */}
         <motion.div
