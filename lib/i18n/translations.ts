@@ -13,6 +13,10 @@ export const translations = {
   },
   about: {
     title: { ko: "About", en: "About" },
+    intro: {
+      ko: "사용자 경험을 중심으로 웹 서비스를 구현하는 프론트엔드 개발자입니다.\n처음 개발 회사에 들어가고, 방황하던 시기도 있었습니다.\n다른 일을 경험하고 돌아왔을 때, 무언가 만드는 일이 가장 즐겁다는 걸 확실히 알게 됐습니다.\n돌아와서 느낀 그 확신이, 지금의 원동력입니다.",
+      en: "A frontend developer who builds web services with a focus on user experience.\nAfter joining my first dev company, there was a time I wandered.\nBut after stepping away and coming back, I realized that building things is what truly excites me.\nThat conviction I found is what drives me now.",
+    },
     values: [
       {
         keyword: {
