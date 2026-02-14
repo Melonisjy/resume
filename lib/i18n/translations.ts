@@ -113,6 +113,7 @@ export const translations = {
           "Tailwind CSS",
           "TanStack Query",
         ],
+        link: "https://elimsafety.com/",
       },
       {
         title: { ko: "교육운영", en: "Education Operations" },
@@ -139,6 +140,7 @@ export const translations = {
             en: "Managed trainees and analyzed education effectiveness",
           },
         ],
+        link: "https://www.gbsa.or.kr/",
       },
       {
         title: { ko: "Frontend Developer", en: "Frontend Developer" },
