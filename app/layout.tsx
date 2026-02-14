@@ -19,13 +19,26 @@ export const metadata: Metadata = {
   description: "Digital resume portfolio",
 };
 
+const themeScript = `
+  (function() {
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    } catch(e) {}
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
         className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
       >
