@@ -118,7 +118,7 @@ export const translations = {
         title: { ko: "교육운영", en: "Education Operations" },
         company: {
           ko: "경기도경제과학진흥원",
-          en: "Gyeonggi Economic Science Promotion Agency",
+          en: "Gyeonggi Business Science Accelerator",
         },
         period: { ko: "2025.05 ~ 2025.10", en: "May 2025 ~ Oct 2025" },
         description: {
