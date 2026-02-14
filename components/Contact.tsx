@@ -5,7 +5,14 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { translations } from "@/lib/i18n/translations";
 
-const contactInfo = [
+interface ContactItem {
+  label: string;
+  value: string;
+  href: string;
+  internal?: boolean;
+}
+
+const contactInfo: ContactItem[] = [
   {
     label: "Email",
     value: "dhy2458@gmail.com",
@@ -17,14 +24,10 @@ const contactInfo = [
     href: "https://github.com/Melonisjy",
   },
   {
-    label: "Tistory",
-    value: "melon.sol",
-    href: "https://melon-is-jy.tistory.com/",
-  },
-  {
-    label: "Velog",
-    value: "meloncoder",
-    href: "https://velog.io/@meloncoder/posts",
+    label: "Blog",
+    value: "tech & thoughts",
+    href: "/blog",
+    internal: true,
   },
 ];
 
@@ -50,11 +53,16 @@ export default function Contact() {
               </span>
               <a
                 href={info.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(!info.internal && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
                 className="text-[#222] dark:text-[#f5f5f0] hover:text-[#666] dark:hover:text-[#aaa] transition-colors duration-300"
               >
-                {info.value} <span className="text-[#999] dark:text-[#666]">↗</span>
+                {info.value}{" "}
+                {!info.internal && (
+                  <span className="text-[#999] dark:text-[#666]">↗</span>
+                )}
               </a>
             </motion.div>
           ))}
