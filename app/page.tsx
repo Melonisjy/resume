@@ -8,7 +8,7 @@ import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Projects from "@/components/Projects";
 import BlogPosts from "@/components/BlogPosts";
-import Contact from "@/components/Contact";
+import Archive from "@/components/Archive";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -72,7 +72,7 @@ export default function Home() {
             <Education />
             <Projects />
             <BlogPosts />
-            <Contact />
+            <Archive />
           </motion.div>
 
           {/* Page turn shadow effect */}
