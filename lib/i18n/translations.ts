@@ -16,52 +16,52 @@ export const translations = {
     values: [
       {
         keyword: {
-          ko: "더 나은 사용자경험",
-          en: "Better User Experience",
+          ko: "사용자 피드백 기반 개선",
+          en: "User Feedback-Driven Improvement",
         },
         note: {
-          ko: "UX를 위해 끊임없이 고민합니다",
-          en: "Constantly striving for better UX",
+          ko: "현장 사용자의 피드백을 직접 반영해 UI를 개선합니다",
+          en: "Directly incorporates field user feedback to improve UI",
         },
       },
       {
         keyword: {
-          ko: "사용자 관점에서 서비스 바라보기",
-          en: "Seeing Services from the User's Perspective",
+          ko: "레거시 코드를 두려워하지 않는 것",
+          en: "Not Afraid of Legacy Code",
         },
         note: {
-          ko: "항상 사용자 입장에서 생각합니다",
-          en: "Always thinking from the user's point of view",
+          ko: "외주 코드 리팩토링으로 유지보수성을 높인 경험이 있습니다",
+          en: "Experienced in refactoring outsourced code to improve maintainability",
         },
       },
       {
         keyword: {
-          ko: "함께 성장하는 것에 즐거움",
-          en: "Joy in Growing Together",
+          ko: "재사용 가능한 구조 설계",
+          en: "Designing Reusable Architecture",
         },
         note: {
-          ko: "팀과 함께 나아가는 것을 좋아합니다",
-          en: "Love moving forward with the team",
+          ko: "모노레포 환경에서 공통 컴포넌트 라이브러리를 설계했습니다",
+          en: "Designed a shared component library in a monorepo environment",
         },
       },
       {
         keyword: {
-          ko: "깔끔하고 직관적인 것",
-          en: "Clean and Intuitive",
+          ko: "빠른 도메인 적응력",
+          en: "Quick Domain Adaptability",
         },
         note: {
-          ko: "군더더기 없는 인터페이스를 추구합니다",
-          en: "Pursuing interfaces without unnecessary complexity",
+          ko: "블록체인부터 안전진단까지, 새로운 도메인에 빠르게 적응합니다",
+          en: "Quickly adapts to new domains, from blockchain to safety diagnostics",
         },
       },
       {
         keyword: {
-          ko: "팀원들과의 소통",
-          en: "Communication with Teammates",
+          ko: "팀과 함께 만드는 것",
+          en: "Building Together with the Team",
         },
         note: {
-          ko: "좋은 결과는 좋은 소통에서 나옵니다",
-          en: "Great results come from great communication",
+          ko: "백엔드와 API 설계부터 협업하며 더 나은 결과를 만듭니다",
+          en: "Collaborates with backend from API design to deliver better results",
         },
       },
     ],
@@ -94,16 +94,16 @@ export const translations = {
         },
         achievements: [
           {
-            ko: "외주 레거시 코드 리팩토링 및 유지보수성 개선",
-            en: "Refactored outsourced legacy code, improving maintainability",
+            ko: "외주 레거시 코드를 컴포넌트 단위로 분리·리팩토링하여 유지보수성 개선",
+            en: "Decomposed and refactored outsourced legacy code into component-based architecture",
           },
           {
-            ko: "사용자 피드백 기반 UI/UX 개선 작업 진행",
-            en: "Improved UI/UX based on user feedback",
+            ko: "현장 안전진단 담당자의 피드백을 직접 반영한 UI/UX 개선",
+            en: "Improved UI/UX by directly incorporating feedback from field safety inspectors",
           },
           {
-            ko: "백엔드 협업을 통한 API 연동 및 화면 구현",
-            en: "API integration and screen implementation through backend collaboration",
+            ko: "백엔드 개발자와 API 설계 단계부터 협업하여 주요 화면 구현",
+            en: "Implemented key screens by collaborating with backend developers from API design stage",
           },
         ],
         tech: [
@@ -123,21 +123,17 @@ export const translations = {
         },
         period: { ko: "2025.05 ~ 2025.10", en: "May 2025 ~ Oct 2025" },
         description: {
-          ko: "공기업 교육운영직무 (계약직)",
-          en: "Education operations at public institution (Contract)",
+          ko: "공기업 교육운영 계약직 — 비개발 직군과의 협업 및 기획 역량을 키운 경험",
+          en: "Contract role at public institution — Gained cross-functional collaboration and planning skills",
         },
         achievements: [
           {
-            ko: "교육 프로그램 기획 및 운영 담당",
-            en: "Planned and managed education programs",
+            ko: "교육 프로그램 기획·운영을 통해 비개발 직군과의 커뮤니케이션 역량 강화",
+            en: "Strengthened communication skills with non-dev teams through program planning and operations",
           },
           {
-            ko: "내년도 사업계획서 작성 참여",
-            en: "Participated in writing next year's business plan",
-          },
-          {
-            ko: "교육생 관리 및 교육 효과 분석",
-            en: "Managed trainees and analyzed education effectiveness",
+            ko: "사업계획서 작성 참여로 서비스 기획 관점 확장",
+            en: "Broadened service planning perspective by contributing to business proposals",
           },
         ],
         link: "https://www.gbsa.or.kr/",
@@ -152,20 +148,20 @@ export const translations = {
         },
         achievements: [
           {
-            ko: "NFT 마켓플레이스, 브릿지, 전송 기능 개발",
-            en: "Developed NFT marketplace, bridge, and transfer features",
+            ko: "NFT 리스팅·구매·전송 및 크로스체인 브릿지 기능 개발",
+            en: "Developed NFT listing, purchase, transfer and cross-chain bridge features",
           },
           {
-            ko: "모노레포 환경 구축 및 공통 컴포넌트 라이브러리 설계",
-            en: "Set up monorepo and designed shared component library",
+            ko: "3~4개 프로젝트를 모노레포로 통합하고, 공통 컴포넌트 라이브러리를 설계하여 코드 재사용성 향상",
+            en: "Consolidated 3-4 projects into a monorepo and designed shared component library to improve code reusability",
           },
           {
-            ko: "백오피스 프론트엔드 개발",
-            en: "Developed back-office frontend",
+            ko: "블록체인 데이터 관리 및 시각화를 위한 백오피스 프론트엔드 개발",
+            en: "Developed back-office frontend for blockchain data management and visualization",
           },
           {
-            ko: "홈페이지 리뉴얼 프로젝트 참여",
-            en: "Participated in homepage renewal project",
+            ko: "그랜드 오픈을 위한 홈페이지 리뉴얼 프론트엔드 전담 개발",
+            en: "Led frontend development for homepage renewal ahead of grand opening",
           },
         ],
         tech: ["JavaScript", "React", "Redux", "Sass"],
