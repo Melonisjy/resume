@@ -6,10 +6,6 @@ export const translations = {
       ko: ["이", "주", "열"],
       en: ["Joo", "yeol Lee"],
     },
-    subtitle: {
-      ko: "사용자 경험을 중심으로 웹 서비스를 구현하는 프론트엔드 개발자입니다.",
-      en: "A frontend developer who builds web services with a focus on user experience.",
-    },
   },
   about: {
     title: { ko: "About", en: "About" },
