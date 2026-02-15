@@ -82,6 +82,19 @@ export default function Home() {
             }}
           />
 
+          {/* Print-only: 웹사이트 안내 배너 */}
+          <div className="hidden print:block mb-4 pb-3 border-b border-[#ddd] text-center">
+            <p className="text-xs text-[#888]">
+              이 이력서의 인터랙티브 버전을 웹에서 확인하실 수 있습니다
+            </p>
+            <a
+              href="https://resume-seven-beige.vercel.app"
+              className="text-sm text-[#444] font-medium"
+            >
+              https://resume-seven-beige.vercel.app
+            </a>
+          </div>
+
           {/* Content */}
           <motion.div
             className="relative z-10"

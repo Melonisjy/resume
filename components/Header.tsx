@@ -105,6 +105,14 @@ export default function Header() {
         >
           github.com/Melonisjy ↗
         </a>
+        {/* Print-only: 웹사이트 링크 */}
+        <span className="hidden print:inline text-[#ccc]">·</span>
+        <a
+          href="https://resume-seven-beige.vercel.app"
+          className="hidden print:inline hover:text-[#222] transition-colors duration-300"
+        >
+          resume-seven-beige.vercel.app
+        </a>
       </motion.div>
     </motion.header>
   );

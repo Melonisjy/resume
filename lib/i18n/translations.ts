@@ -326,6 +326,7 @@ export const translations = {
         },
         tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "MDX"],
         period: "2026",
+        link: "https://resume-seven-beige.vercel.app/",
         github: "https://github.com/Melonisjy/resume",
       },
       {

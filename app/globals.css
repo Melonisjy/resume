@@ -192,6 +192,15 @@ h6 {
     display: none !important;
   }
 
+  /* 프린트 전용 요소 표시 */
+  .print\:block {
+    display: block !important;
+  }
+
+  .print\:inline {
+    display: inline !important;
+  }
+
   /* 섹션 간 페이지 브레이크 방지 */
   section {
     break-inside: avoid;
