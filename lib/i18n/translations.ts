@@ -148,8 +148,8 @@ export const translations = {
         },
         achievements: [
           {
-            ko: "NFT 리스팅·구매·전송 및 크로스체인 브릿지 기능 개발",
-            en: "Developed NFT listing, purchase, transfer and cross-chain bridge features",
+            ko: "NFT 마켓플레이스·브릿지·트랜스퍼 등 블록체인 서비스 프론트엔드 개발",
+            en: "Developed frontend for blockchain services including NFT marketplace, bridge, and transfer",
           },
           {
             ko: "3~4개 프로젝트를 모노레포로 통합하고, 공통 컴포넌트 라이브러리를 설계하여 코드 재사용성 향상",
