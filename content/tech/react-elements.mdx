@@ -1,0 +1,66 @@
+---
+title: "React Elements 정리"
+date: "2026-02-18"
+description: "React Element의 개념, DOM 렌더링 과정, 그리고 업데이트 방식을 정리했다."
+category: "tech"
+---
+
+## React Element란
+
+React 앱을 구성하는 **가장 작은 단위**다. 브라우저의 DOM element와 달리 **plain object**이기 때문에 생성 비용이 적다.
+
+```javascript
+const element = <h1>Hello</h1>;
+// 실제로는 이런 plain object가 된다
+// { type: 'h1', props: { children: 'Hello' } }
+```
+
+---
+
+## React Element → DOM 렌더링 과정
+
+React Element가 브라우저에 렌더링되는 흐름은 다음과 같다.
+
+1. React Element들이 **DOM element에 소속**된다.
+2. 브라우저가 소속된 React Element들을 **DOM element로 인식**한다.
+3. DOM element로 인식된 React Element들이 **렌더링**된다.
+
+이때 소속되는 곳이 바로 **root DOM node**다.
+
+```html
+<div id="root"></div>
+```
+
+모든 React Element는 이 `root` 노드 안에 들어간다.
+
+---
+
+## React DOM의 render
+
+React DOM은 `render` 메서드를 실행하여 화면을 그린다. 이때 인자로 **React Element**와 **브라우저 DOM element**(root 노드)를 받는다.
+
+```javascript
+const element = <h1>Hello</h1>;
+ReactDOM.render(element, document.getElementById("root"));
+```
+
+---
+
+## 업데이트 방식
+
+React DOM은 React Element와 실제 DOM이 일치하도록 DOM을 업데이트한다. 핵심은 **달라진 부분만 업데이트**한다는 것이다. 전체를 다시 그리는 게 아니라, 이전 Element와 비교하여 변경된 부분만 DOM에 반영한다.
+
+---
+
+## 정리
+
+- React Element는 plain object이며 생성 비용이 적다.
+- 모든 React Element는 root DOM node에 소속되어 렌더링된다.
+- React DOM은 `render` 메서드로 React Element를 DOM에 반영한다.
+- 업데이트 시 전체가 아닌 **변경된 부분만** DOM에 반영한다.
+
+---
+
+## 출처
+
+- [React Elements (YouTube)](https://www.youtube.com/watch?v=MTzS8XnD6-Q)
