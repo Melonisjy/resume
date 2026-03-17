@@ -35,13 +35,10 @@ export const translations = {
         },
       },
       {
-        keyword: {
-          ko: "재사용 가능한 구조 설계",
-          en: "Designing Reusable Architecture",
-        },
+        keyword: { ko: "재사용 가능한 구조 설계", en: "Designing Reusable Architecture" },
         note: {
-          ko: "모노레포 환경에서 공통 컴포넌트 라이브러리를 설계했습니다",
-          en: "Designed a shared component library in a monorepo environment",
+          ko: "모노레포 환경에서 공통 컴포넌트 10개+를 설계하고 문서 사이트로 팀에 제공했습니다",
+          en: "Designed 10+ shared components in a monorepo and published them as a documentation site for the team",
         },
       },
       {
@@ -152,9 +149,10 @@ export const translations = {
             en: "Developed frontend for blockchain services including NFT marketplace, bridge, and transfer",
           },
           {
-            ko: "3~4개 프로젝트를 모노레포로 통합하고, 공통 컴포넌트 라이브러리를 설계하여 코드 재사용성 향상",
-            en: "Consolidated 3-4 projects into a monorepo and designed shared component library to improve code reusability",
+            ko: "3~4개 독립 프로젝트를 모노레포로 통합하고, 공통 컴포넌트 10개+ 를 설계·문서 사이트로 제공하여 디자이너-개발자 간 협업 프로세스 개선",
+            en: "Consolidated 3-4 independent projects into a monorepo and delivered 10+ shared components with a documentation site, improving designer-developer collaboration",
           },
+
           {
             ko: "블록체인 데이터 관리 및 시각화를 위한 백오피스 프론트엔드 개발",
             en: "Developed back-office frontend for blockchain data management and visualization",
@@ -267,8 +265,8 @@ export const translations = {
       {
         name: { ko: "Common Component UI", en: "Common Component UI" },
         description: {
-          ko: "팀 내부 공통 컴포넌트 라이브러리 및 문서 사이트",
-          en: "Internal shared component library and documentation site",
+          ko: "10개+ 공통 컴포넌트를 설계하고 디자이너·개발자가 함께 참고할 수 있는 문서 사이트로 제공",
+          en: "Designed 10+ shared components and published a documentation site for designers and developers",
         },
         tech: ["React", "JavaScript"],
         period: "2024",
