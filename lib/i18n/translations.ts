@@ -247,8 +247,8 @@ export const translations = {
       {
         name: { ko: "Homepage Renewal", en: "Homepage Renewal" },
         description: {
-          ko: "그랜드 오픈을 위한 리뉴얼 홈페이지, API 연동 작업",
-          en: "Renewed homepage for grand opening with API integration",
+          ko: "그랜드 오픈 일정에 맞춰 프론트엔드 전담 개발 — 디자인 시안 기반 반응형 구현 및 REST API 연동",
+          en: "Led frontend development for grand opening — Responsive implementation from design specs with REST API integration",
         },
         tech: ["React", "JavaScript"],
         period: "2024",
@@ -256,8 +256,8 @@ export const translations = {
       {
         name: { ko: "JEFF Back Office", en: "JEFF Back Office" },
         description: {
-          ko: "블록체인 데이터 관리 및 시각화 백오피스",
-          en: "Blockchain data management and visualization back office",
+          ko: "블록체인 트랜잭션 데이터를 ApexChart로 시각화한 내부 관리 백오피스 개발",
+          en: "Developed internal back-office to visualize blockchain transaction data using ApexChart",
         },
         tech: ["React", "ApexChart"],
         period: "2024",
@@ -294,8 +294,8 @@ export const translations = {
       {
         name: { ko: "INSURSAND", en: "INSURSAND" },
         description: {
-          ko: "디파이 보험 플랫폼 — 팀장으로서 기획 및 프론트엔드 개발",
-          en: "DeFi insurance platform — Led as team leader, planned and developed frontend",
+          ko: "디파이 보험 플랫폼 — 팀장으로서 기술 스택 선정·기획·프론트엔드 개발 전담. 부트캠프 대상 수상.",
+          en: "DeFi insurance platform — Led team as tech lead: stack selection, planning, and full frontend development. Grand Prize winner.",
         },
         tech: ["React", "Solidity", "Web3.js", "Tailwind CSS"],
         period: "2023",
@@ -319,8 +319,8 @@ export const translations = {
       {
         name: { ko: "Resume", en: "Resume" },
         description: {
-          ko: "직접 설계·개발한 이력서 웹사이트 — 한/영 전환, 다크모드, MDX 블로그, PDF 출력 지원",
-          en: "Self-designed resume website — i18n, dark mode, MDX blog, PDF print support",
+          ko: "직접 설계·개발한 이력서 웹사이트 — 한/영 전환(i18n), 다크모드, MDX 기반 블로그, PDF 출력까지 전 기능 단독 구현. 이력서 자체가 포트폴리오.",
+          en: "Self-designed and built resume site — Solo implementation of i18n, dark mode, MDX blog, and PDF export. The resume itself is the portfolio.",
         },
         tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "MDX"],
         period: "2026",
