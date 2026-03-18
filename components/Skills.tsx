@@ -5,9 +5,6 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { translations } from "@/lib/i18n/translations";
 
-const mainStack = ["TypeScript", "React", "Next.js"];
-const subStack = ["Zustand", "Redux", "TanStack Query", "Tailwind CSS", "Sass", "Monorepo", "Cursor AI"];
-
 export default function Skills() {
   const { lang } = useLanguage();
   const t = translations.skills;
@@ -15,7 +12,7 @@ export default function Skills() {
   return (
     <Section id="skills" title={t.title[lang]}>
       <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
-        {/* Main Stack */}
+        {/* Primary */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -24,10 +21,10 @@ export default function Skills() {
           className="mb-6"
         >
           <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
-            {t.mainLabel[lang]}
+            {t.primaryLabel[lang]}
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
-            {mainStack.map((skill, index) => (
+            {t.primary.map((skill, index) => (
               <motion.span
                 key={skill}
                 initial={{ opacity: 0, y: 10 }}
@@ -44,27 +41,56 @@ export default function Skills() {
           </div>
         </motion.div>
 
-        {/* Sub Stack */}
+        {/* Applied */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
+          className="mb-6"
         >
           <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
-            {t.subLabel[lang]}
+            {t.appliedLabel[lang]}
           </p>
           <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {subStack.map((skill, index) => (
+            {t.applied.map((skill, index) => (
               <motion.span
                 key={skill}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
+                transition={{ duration: 0.3, delay: 0.35 + index * 0.05 }}
+                className="text-[#444] dark:text-[#ddd] text-sm md:text-base transition-colors duration-300"
+              >
+                {skill}
+                {index < t.applied.length - 1 && ","}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Exposure */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+        >
+          <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
+            {t.exposureLabel[lang]}
+          </p>
+          <div className="flex flex-wrap gap-x-3 gap-y-2">
+            {t.exposure.map((skill, index) => (
+              <motion.span
+                key={skill}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.5 + index * 0.04 }}
                 className="text-[#666] dark:text-[#aaa] transition-colors duration-300"
               >
-                {skill}{index < subStack.length - 1 && ","}
+                {skill}
+                {index < t.exposure.length - 1 && ","}
               </motion.span>
             ))}
           </div>
