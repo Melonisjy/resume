@@ -328,6 +328,17 @@ export const translations = {
         github: "https://github.com/Melonisjy/resume",
       },
       {
+        name: { ko: "Nuvo", en: "Nuvo" },
+        description: {
+          ko: "Web2 사용자를 위한 토스 같은 Web3 송금 앱 - 구글 로그인으로 지갑 자동 생성, 닉네임으로 송금",
+          en: "A Toss-like Web3 transfer app for Web2 users - wallet auto-created with Google login, transfer by nickname",
+        },
+        tech: ["Next.js", "TypeScript", "Privy", "viem", "Base", "Supabase"],
+        period: "2026",
+        status: { ko: "개발중", en: "In Dev" },
+        github: "https://github.com/Melonisjy/nuvo",
+      },
+      {
         name: { ko: "킥-인 (KIKIN)", en: "KIKIN" },
         description: {
           ko: "풋살 팀 경기 일정 관리 웹앱 — 팀 생성/초대, 출석 투표, 공지사항, 실시간 알림",
