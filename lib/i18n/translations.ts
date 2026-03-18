@@ -35,7 +35,10 @@ export const translations = {
         },
       },
       {
-        keyword: { ko: "재사용 가능한 구조 설계", en: "Designing Reusable Architecture" },
+        keyword: {
+          ko: "재사용 가능한 구조 설계",
+          en: "Designing Reusable Architecture",
+        },
         note: {
           ko: "모노레포 환경에서 공통 컴포넌트 10개+를 설계하고 문서 사이트로 팀에 제공했습니다",
           en: "Designed 10+ shared components in a monorepo and published them as a documentation site for the team",
@@ -65,14 +68,20 @@ export const translations = {
   },
   skills: {
     title: { ko: "Skills", en: "Skills" },
-    mainLabel: {
-      ko: "주로 사용하는 기술 —",
-      en: "Main Stack —",
-    },
-    subLabel: {
-      ko: "함께 사용하는 것들 —",
-      en: "Also Working With —",
-    },
+    primaryLabel: { ko: "주력 —", en: "Primary —" },
+    appliedLabel: { ko: "활용 —", en: "Applied —" },
+    exposureLabel: { ko: "경험 —", en: "Exposure —" },
+    primary: ["JavaScript", "TypeScript", "React", "Next.js"],
+    applied: [
+      "Zustand",
+      "TanStack Query",
+      "Tailwind CSS",
+      "Sass",
+      "Redux",
+      "Cursor AI",
+      "Web3.js",
+    ],
+    exposure: ["Supabase", "Monorepo"],
   },
   experience: {
     title: { ko: "Experience", en: "Experience" },
