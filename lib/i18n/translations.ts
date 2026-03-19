@@ -35,7 +35,10 @@ export const translations = {
         },
       },
       {
-        keyword: { ko: "재사용 가능한 구조 설계", en: "Designing Reusable Architecture" },
+        keyword: {
+          ko: "재사용 가능한 구조 설계",
+          en: "Designing Reusable Architecture",
+        },
         note: {
           ko: "모노레포 환경에서 공통 컴포넌트 10개+를 설계하고 문서 사이트로 팀에 제공했습니다",
           en: "Designed 10+ shared components in a monorepo and published them as a documentation site for the team",
@@ -65,14 +68,20 @@ export const translations = {
   },
   skills: {
     title: { ko: "Skills", en: "Skills" },
-    mainLabel: {
-      ko: "주로 사용하는 기술 —",
-      en: "Main Stack —",
-    },
-    subLabel: {
-      ko: "함께 사용하는 것들 —",
-      en: "Also Working With —",
-    },
+    primaryLabel: { ko: "주력 —", en: "Primary —" },
+    appliedLabel: { ko: "활용 —", en: "Applied —" },
+    exposureLabel: { ko: "경험 —", en: "Exposure —" },
+    primary: ["JavaScript", "TypeScript", "React", "Next.js"],
+    applied: [
+      "Zustand",
+      "TanStack Query",
+      "Tailwind CSS",
+      "Sass",
+      "Redux",
+      "Cursor AI",
+      "Web3.js",
+    ],
+    exposure: ["Supabase", "Monorepo"],
   },
   experience: {
     title: { ko: "Experience", en: "Experience" },
@@ -326,6 +335,17 @@ export const translations = {
         period: "2026",
         link: "https://resume-seven-beige.vercel.app/",
         github: "https://github.com/Melonisjy/resume",
+      },
+      {
+        name: { ko: "Nuvo", en: "Nuvo" },
+        description: {
+          ko: "Web2 사용자를 위한 토스 같은 Web3 송금 앱 - 구글 로그인으로 지갑 자동 생성, 닉네임으로 송금",
+          en: "A Toss-like Web3 transfer app for Web2 users - wallet auto-created with Google login, transfer by nickname",
+        },
+        tech: ["Next.js", "TypeScript", "Privy", "viem", "Base", "Supabase"],
+        period: "2026",
+        status: { ko: "개발중", en: "In Dev" },
+        github: "https://github.com/Melonisjy/nuvo",
       },
       {
         name: { ko: "킥-인 (KIKIN)", en: "KIKIN" },
