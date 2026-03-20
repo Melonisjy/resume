@@ -100,6 +100,12 @@ export const translations = {
         },
         achievements: [
           {
+            ko: "주요 페이지 번들 47~54% 감소 — bundle-analyzer로 병목 발견, dynamic import 적용",
+            en: "Reduced bundle size by 47–54% — identified bottlenecks with bundle-analyzer, applied dynamic imports",
+            link: "/blog/nextjs-bundle-size-optimization",
+            linkLabel: { ko: "번들 최적화 과정 보기", en: "Read optimization story" },
+          },
+          {
             ko: "외주 레거시 코드를 컴포넌트 단위로 분리·리팩토링하여 유지보수성 개선",
             en: "Decomposed and refactored outsourced legacy code into component-based architecture",
           },

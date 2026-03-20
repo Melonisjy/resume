@@ -100,7 +100,19 @@ export default function Experience() {
                         }`}>
                           {isNonDev ? "·" : "[✓]"}
                         </span>
-                        <span>{achievement[lang]}</span>
+                        <span>
+                          {achievement[lang]}
+                          {"link" in achievement && achievement.link && (
+                            <a
+                              href={achievement.link as string}
+                              className="ml-1.5 text-xs text-[#999] dark:text-[#666] hover:text-[#444] dark:hover:text-[#aaa] transition-colors duration-300 whitespace-nowrap"
+                            >
+                              {"linkLabel" in achievement && achievement.linkLabel
+                                ? `${(achievement.linkLabel as Record<string, string>)[lang]} ↗`
+                                : "↗"}
+                            </a>
+                          )}
+                        </span>
                       </li>
                     ))}
                   </ul>
