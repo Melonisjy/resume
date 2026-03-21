@@ -91,7 +91,10 @@ export const translations = {
     },
     items: [
       {
-        title: { ko: "Frontend Developer", en: "Frontend Developer" },
+        title: {
+          ko: "Frontend Developer (프리랜서)",
+          en: "Frontend Developer (Freelance)",
+        },
         company: { ko: "엘림 주식회사", en: "Elim Inc." },
         period: { ko: "2026.01 ~", en: "Jan 2026 ~ Present" },
         description: {
@@ -110,12 +113,12 @@ export const translations = {
             en: "Decomposed and refactored outsourced legacy code into component-based architecture",
           },
           {
-            ko: "현장 안전진단 담당자의 피드백을 직접 반영한 UI/UX 개선",
-            en: "Improved UI/UX by directly incorporating feedback from field safety inspectors",
+            ko: "에너지 사용량 입력 UX 개선 — 마우스 클릭 이동 방식에서 방향키 셀 네비게이션으로 개선 (입력값 length 기반 커서 위치 계산으로 좌우 이동 구현)",
+            en: "Improved energy input UX — Replaced mouse-click navigation with arrow key cell navigation (cursor positioning based on input value length)",
           },
           {
-            ko: "백엔드 개발자와 API 설계 단계부터 협업하여 주요 화면 구현",
-            en: "Implemented key screens by collaborating with backend developers from API design stage",
+            ko: "react-konva 기반 도면 마커/결함 인터랙션 구현 — 더블클릭 마커 생성, 드래그 위치 이동, 드래그 종료 시 자동저장으로 UX 개선",
+            en: "Implemented drawing marker/defect interaction with react-konva — double-click creation, drag repositioning, auto-save on drag end",
           },
         ],
         tech: [
