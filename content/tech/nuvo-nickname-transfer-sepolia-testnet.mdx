@@ -1,0 +1,120 @@
+---
+title: "Nuvo에서 닉네임으로 송금하기 (feat. sepolia testnet)"
+date: "2026-03-24"
+description: "Privy로 구글 로그인 기반 지갑을 만들고, Supabase 닉네임 매핑과 Base Sepolia로 실제 송금까지 구현한 과정"
+category: "tech"
+---
+
+지난 글에서 Nuvo를 만들기로 했다.
+
+구글 로그인 하나로 Web3 지갑을 만들고, 닉네임으로 코인을 보내는 앱.
+
+이번엔 실제로 구현한 과정을 적는다.
+
+---
+
+## 구글 로그인으로 지갑을 만들다
+
+가장 먼저 해결해야 할 것은 지갑 생성이었다.
+
+Web3의 첫 번째 벽이 바로 여기다.
+
+> MetaMask 설치, 시드 구문 저장, 개인키 관리.
+> 이 과정을 일반 사용자에게 요구하는 순간 절반은 이탈한다.
+
+Privy를 선택한 이유가 바로 이것이었다.
+소셜 로그인을 Web3 지갑으로 바꿔주는 SDK가 있다.
+
+설정은 생각보다 훨씬 간단했다.
+
+```typescript
+<PrivyProvider
+  appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID!}
+  config={{
+    loginMethods: ["google", "email"],
+    embeddedWallets: {
+      ethereum: {
+        createOnLogin: "users-without-wallets",
+      },
+    },
+  }}
+>
+```
+
+소셜 로그인만으로 실제 이더리움 지갑 주소가 생겼다.
+Web2 사용자들이 지갑이 뭔지 몰라도, 개인키가 뭔지 몰라도 Web3를 쓸 수 있겠다는 게 눈에 보였다.
+
+---
+
+## 막혔던 것들
+
+### createContext 에러
+
+처음 PrivyProvider를 `layout.tsx`에 바로 넣었더니 에러가 났다.
+
+```text
+createContext only works in Client Components.
+```
+
+Next.js App Router에서 `layout.tsx`는 서버 컴포넌트다. Context를 쓰는 건 전부 클라이언트 컴포넌트여야 한다.
+
+해결은 간단했다. `providers.tsx`를 분리하고 `"use client"`를 선언했다.
+
+```typescript
+"use client";
+
+export default function Providers({ children }) {
+  return <PrivyProvider ...>{children}</PrivyProvider>;
+}
+```
+
+### 테스트용 ETH 받기
+
+송금 테스트를 하려면 테스트넷 ETH가 필요했다.
+
+Base Sepolia faucet을 찾아봤는데 대부분 조건이 있었다. 메인넷에 **최소 0.001 ETH 이상 보유**해야 받을 수 있는 식이었다.
+
+결국 조건 없는 faucet을 찾아서 테스트 ETH를 받았다. 작은 과정이지만 Web3 개발의 현실이었다.
+
+_예전에도 goerli, holesky(?), sepolia 등 이더리움 테스트넷에서 토큰을 받으려고 힘들었던 기억이 스친다..._
+
+---
+
+## 닉네임으로 송금하기
+
+지갑 생성이 됐으니 다음은 핵심 기능이었다.
+
+플로우는 이렇게 잡았다.
+
+```text
+닉네임 입력
+    ↓
+Supabase에서 닉네임 -> 지갑 주소 조회
+    ↓
+금액 입력
+    ↓
+확인 화면
+    ↓
+Privy useSendTransaction으로 전송
+```
+
+그리고 "Transaction complete!"가 떴다.
+
+항상 DeFi나 Web3에서 토큰을 보낼 때는 긴 지갑 주소를 복사해서 붙여넣어야 했다. 조금이라도 틀리면 돈이 사라지거나 오류가 난다. Web3에선 그게 당연한 줄 알았다.
+
+근데 닉네임으로 보내니까 달랐다. Web3스럽지 않았다. 그게 정확히 Nuvo가 만들고 싶었던 것이었다.
+
+일반 사용자가 Web3인지 모르고 쓸 수 있는 토스같은 앱.
+
+---
+
+## 지금까지 만든 것
+
+```text
+✓ 구글 로그인 -> 지갑 자동 생성
+✓ Base Sepolia 실시간 잔액 조회
+✓ 닉네임 설정
+✓ 닉네임으로 실제 송금
+```
+
+아직 메인넷이 아니고, 아직 거친 부분도 많지만 닉네임으로 토큰이 전송되는 것까지 확인했다.
