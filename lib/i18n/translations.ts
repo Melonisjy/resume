@@ -358,6 +358,7 @@ export const translations = {
         tech: ["Next.js", "TypeScript", "Privy", "viem", "Base", "Supabase"],
         period: "2026",
         status: { ko: "개발중", en: "In Dev" },
+        link: "https://nuvo-pi.vercel.app/",
         github: "https://github.com/Melonisjy/nuvo",
       },
       {
