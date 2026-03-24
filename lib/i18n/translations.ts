@@ -163,21 +163,25 @@ export const translations = {
         },
         achievements: [
           {
-            ko: "NFT 마켓플레이스·브릿지·트랜스퍼 등 블록체인 서비스 프론트엔드 개발",
-            en: "Developed frontend for blockchain services including NFT marketplace, bridge, and transfer",
+            ko: "NFT 마켓플레이스·브릿지·트랜스퍼 프론트엔드 구현 — 지갑 연결, 트랜잭션 상태 처리(대기/성공/실패), 에러 메시지 분기로 사용자 송금/자산 이동 흐름 안정화",
+            en: "Implemented frontend for NFT marketplace, bridge, and transfer flows — stabilized user asset transfer journeys with wallet connection, transaction state handling (pending/success/failure), and error-message branching",
           },
           {
             ko: "3~4개 독립 프로젝트를 모노레포로 통합하고, 공통 컴포넌트 10개+ 를 설계·문서 사이트로 제공하여 디자이너-개발자 간 협업 프로세스 개선",
             en: "Consolidated 3-4 independent projects into a monorepo and delivered 10+ shared components with a documentation site, improving designer-developer collaboration",
           },
+          {
+            ko: "다국어(i18n) 지원 구조 설계 및 적용 — 한/영 리소스를 공통 번역 객체로 분리해 화면별 텍스트 관리 일관성 확보",
+            en: "Designed and applied an internationalization (i18n) structure — separated Korean/English resources into a shared translation object for consistent screen-level text management",
+          },
 
           {
-            ko: "블록체인 데이터 관리 및 시각화를 위한 백오피스 프론트엔드 개발",
-            en: "Developed back-office frontend for blockchain data management and visualization",
+            ko: "블록체인 데이터 관리 백오피스 프론트엔드 개발 — ApexChart 기반 트랜잭션/지표 시각화 대시보드를 구현해 운영 데이터 모니터링 효율 개선",
+            en: "Developed blockchain data management back-office frontend — built transaction/metrics visualization dashboards with ApexChart to improve operational monitoring efficiency",
           },
           {
-            ko: "그랜드 오픈을 위한 홈페이지 리뉴얼 프론트엔드 전담 개발",
-            en: "Led frontend development for homepage renewal ahead of grand opening",
+            ko: "그랜드 오픈 홈페이지 리뉴얼 프론트엔드 전담 — 디자인 시안 기반 반응형 퍼블리싱 및 REST API 연동으로 오픈 일정 내 핵심 랜딩/콘텐츠 페이지 구축",
+            en: "Led frontend development for the grand-opening homepage renewal — delivered responsive implementation from design specs and REST API integration to launch core landing/content pages on schedule",
           },
         ],
         tech: ["JavaScript", "React", "Redux", "Sass"],
