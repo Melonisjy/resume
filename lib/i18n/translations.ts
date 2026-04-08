@@ -96,7 +96,7 @@ export const translations = {
           en: "Frontend Developer (Freelance)",
         },
         company: { ko: "엘림 주식회사", en: "Elim Inc." },
-        period: { ko: "2026.01 ~", en: "Jan 2026 ~ Present" },
+        period: { ko: "2026.01 ~ 2026.04", en: "Jan 2026 ~ Apr 2026" },
         description: {
           ko: "사내 안전진단 웹 기반 툴의 프론트엔드 개발 및 유지보수",
           en: "Frontend development and maintenance of in-house safety diagnosis web tool",
@@ -106,7 +106,10 @@ export const translations = {
             ko: "주요 페이지 번들 47~54% 감소 — bundle-analyzer로 병목 발견, dynamic import 적용",
             en: "Reduced bundle size by 47–54% — identified bottlenecks with bundle-analyzer, applied dynamic imports",
             link: "/blog/nextjs-bundle-size-optimization",
-            linkLabel: { ko: "번들 최적화 과정 보기", en: "Read optimization story" },
+            linkLabel: {
+              ko: "번들 최적화 과정 보기",
+              en: "Read optimization story",
+            },
           },
           {
             ko: "외주 레거시 코드를 컴포넌트 단위로 분리·리팩토링하여 유지보수성 개선",
