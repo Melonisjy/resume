@@ -10,58 +10,58 @@ export const translations = {
   about: {
     title: { ko: "About", en: "About" },
     intro: {
-      ko: "사용자 경험을 중심으로 웹 서비스를 구현하는 프론트엔드 개발자입니다.\n처음 개발 회사에 들어가고, 방황하던 시기도 있었습니다.\n다른 일을 경험하고 돌아왔을 때, 무언가 만드는 일이 가장 즐겁다는 걸 확실히 알게 됐습니다.\n돌아와서 느낀 그 확신이, 지금의 원동력입니다.",
-      en: "A frontend developer who builds web services with a focus on user experience.\nAfter joining my first dev company, there was a time I wandered.\nBut after stepping away and coming back, I realized that building things is what truly excites me.\nThat conviction I found is what drives me now.",
+      ko: "TypeScript, React, Next.js 기반 프론트엔드 개발자입니다.\n블록체인 플랫폼(JEFF)에서 모노레포 구축과 공통 컴포넌트 설계를 담당했고,\n이후 안전진단 SaaS(엘림)에서 번들 최적화와 레거시 리팩토링을 주도했습니다.\n도메인이 바뀌어도 빠르게 적응하며 실질적인 개선을 만드는 것을 중요하게 생각합니다.",
+      en: "Frontend developer specializing in TypeScript, React, and Next.js.\nAt JEFF, I led monorepo setup and shared component architecture.\nAt Elim, I drove bundle optimization (47–54% reduction) and legacy refactoring.\nI focus on making practical improvements regardless of the domain.",
     },
     values: [
       {
         keyword: {
-          ko: "사용자 피드백 기반 개선",
-          en: "User Feedback-Driven Improvement",
+          ko: "번들 최적화 및 성능 개선",
+          en: "Bundle Optimization & Performance",
         },
         note: {
-          ko: "현장 사용자의 피드백을 직접 반영해 UI를 개선합니다",
-          en: "Directly incorporates field user feedback to improve UI",
+          ko: "Next.js 환경에서 bundle-analyzer로 병목을 찾고 dynamic import로 47~54% 번들 감소",
+          en: "Identified bottlenecks with bundle-analyzer, reduced bundle size 47–54% via dynamic imports",
         },
       },
       {
         keyword: {
-          ko: "레거시 코드를 두려워하지 않는 것",
-          en: "Not Afraid of Legacy Code",
+          ko: "재사용 가능한 컴포넌트 설계",
+          en: "Reusable Component Architecture",
         },
         note: {
-          ko: "외주 코드 리팩토링으로 유지보수성을 높인 경험이 있습니다",
-          en: "Experienced in refactoring outsourced code to improve maintainability",
+          ko: "모노레포에서 공통 컴포넌트 10개+를 설계하고 문서 사이트로 팀에 배포",
+          en: "Designed 10+ shared components in a monorepo and shipped a documentation site to the team",
         },
       },
       {
         keyword: {
-          ko: "재사용 가능한 구조 설계",
-          en: "Designing Reusable Architecture",
+          ko: "레거시 코드 리팩토링",
+          en: "Legacy Code Refactoring",
         },
         note: {
-          ko: "모노레포 환경에서 공통 컴포넌트 10개+를 설계하고 문서 사이트로 팀에 제공했습니다",
-          en: "Designed 10+ shared components in a monorepo and published them as a documentation site for the team",
+          ko: "외주 코드를 컴포넌트 단위로 분리·정리하여 유지보수 비용 절감",
+          en: "Decomposed outsourced legacy code into components, reducing maintenance overhead",
         },
       },
       {
         keyword: {
-          ko: "빠른 도메인 적응력",
-          en: "Quick Domain Adaptability",
+          ko: "사용자 중심 UX 개선",
+          en: "User-Centered UX Improvement",
         },
         note: {
-          ko: "블록체인부터 안전진단까지, 새로운 도메인에 빠르게 적응합니다",
-          en: "Quickly adapts to new domains, from blockchain to safety diagnostics",
+          ko: "현장 피드백 기반으로 입력 흐름을 개선 — 마우스 클릭에서 방향키 네비게이션으로 전환",
+          en: "Improved input flow from field feedback — replaced mouse clicks with arrow key cell navigation",
         },
       },
       {
         keyword: {
-          ko: "팀 컨벤션과 규칙을 만드는 것",
-          en: "Establishing Team Conventions",
+          ko: "빠른 도메인 적응",
+          en: "Fast Domain Adaptation",
         },
         note: {
-          ko: "커밋 메시지, 브랜치 네이밍, 개발 규칙을 정하고 지키는 걸 좋아합니다",
-          en: "Enjoys defining and following commit messages, branch naming, and dev rules",
+          ko: "블록체인 → 공공기관 안전진단 SaaS까지, 새 도메인에서도 단기간 내 기여",
+          en: "Contributed quickly across domains — from blockchain gaming to public-sector safety SaaS",
         },
       },
     ],
