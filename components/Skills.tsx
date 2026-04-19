@@ -11,14 +11,13 @@ export default function Skills() {
 
   return (
     <Section id="skills" title={t.title[lang]}>
-      <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
+      <div className="flex flex-col gap-6 border-l-2 border-[#999] pl-4 transition-colors duration-300 print:gap-1 dark:border-[#444] md:pl-6">
         {/* Primary */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-6"
         >
           <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
             {t.primaryLabel[lang]}
@@ -47,13 +46,12 @@ export default function Skills() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mb-6"
         >
           <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
             {t.appliedLabel[lang]}
           </p>
           <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {t.applied.map((skill, index) => (
+            {t.applied[lang].map((skill, index) => (
               <motion.span
                 key={skill}
                 initial={{ opacity: 0 }}
@@ -63,7 +61,7 @@ export default function Skills() {
                 className="text-[#444] dark:text-[#ddd] text-sm md:text-base transition-colors duration-300"
               >
                 {skill}
-                {index < t.applied.length - 1 && ","}
+                {index < t.applied[lang].length - 1 && ","}
               </motion.span>
             ))}
           </div>
@@ -80,7 +78,7 @@ export default function Skills() {
             {t.exposureLabel[lang]}
           </p>
           <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {t.exposure.map((skill, index) => (
+            {t.exposure[lang].map((skill, index) => (
               <motion.span
                 key={skill}
                 initial={{ opacity: 0 }}
@@ -90,7 +88,7 @@ export default function Skills() {
                 className="text-[#666] dark:text-[#aaa] transition-colors duration-300"
               >
                 {skill}
-                {index < t.exposure.length - 1 && ","}
+                {index < t.exposure[lang].length - 1 && ","}
               </motion.span>
             ))}
           </div>

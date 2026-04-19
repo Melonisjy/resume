@@ -3,19 +3,20 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/Header";
 import About from "@/components/About";
-import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
-import Education from "@/components/Education";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import Education from "@/components/Education";
 import BlogPosts from "@/components/BlogPosts";
-import Archive from "@/components/Archive";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
 import ScrollProgress from "@/components/ScrollProgress";
 import SideNav from "@/components/SideNav";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { useRef } from "react";
 
 export default function Home() {
+  const { lang } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -38,7 +39,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative mx-auto bg-[#fdfcf8] dark:bg-[#1a1a1a] shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_40px_rgba(255,255,255,0.05)] md:shadow-[0_0_40px_rgba(0,0,0,0.15)] dark:md:shadow-[0_0_60px_rgba(255,255,255,0.08)] transition-colors duration-300"
+          className="resume-paper relative mx-auto bg-[#fdfcf8] shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-colors duration-300 dark:bg-[#1a1a1a] dark:shadow-[0_0_40px_rgba(255,255,255,0.05)] md:shadow-[0_0_40px_rgba(0,0,0,0.15)] dark:md:shadow-[0_0_60px_rgba(255,255,255,0.08)]"
           style={{
             minHeight: "100vh",
             maxWidth: "100%",
@@ -82,44 +83,97 @@ export default function Home() {
             }}
           />
 
-          {/* Print-only: 웹사이트 안내 배너 */}
-          <div className="hidden print:block mb-4 pb-3 border-b border-[#ddd] text-center">
-            <p className="text-xs text-[#888]">
-              이 이력서의 인터랙티브 버전을 웹에서 확인하실 수 있습니다
+          {/* Print-only: 웹/GitHub/블로그 안내 (화면에서는 hidden print:block) */}
+          <div className="mb-4 hidden border-b border-[#ccc] pb-2.5 text-center print:block">
+            <p className="text-[11px] leading-snug text-[#333] print:text-[#222]">
+              {lang === "ko" ? (
+                <>
+                  <a
+                    href="https://resume-seven-beige.vercel.app"
+                    className="font-medium print:text-inherit"
+                  >
+                    웹 버전
+                  </a>
+                  <span className="text-[#999]"> · </span>
+                  <a
+                    href="https://github.com/Melonisjy"
+                    className="font-medium print:text-inherit"
+                  >
+                    GitHub
+                  </a>
+                  <span className="text-[#999]"> · </span>
+                  <a
+                    href="https://velog.io/@meloncoder/posts"
+                    className="font-medium print:text-inherit"
+                  >
+                    블로그
+                  </a>
+                  <span className="text-[#999]"> → </span>
+                  <a
+                    href="https://resume-seven-beige.vercel.app"
+                    className="font-mono text-[11px] print:text-inherit"
+                  >
+                    resume-seven-beige.vercel.app
+                  </a>
+                </>
+              ) : (
+                <>
+                  <a
+                    href="https://resume-seven-beige.vercel.app"
+                    className="font-medium print:text-inherit"
+                  >
+                    Web
+                  </a>
+                  <span className="text-[#999]"> · </span>
+                  <a
+                    href="https://github.com/Melonisjy"
+                    className="font-medium print:text-inherit"
+                  >
+                    GitHub
+                  </a>
+                  <span className="text-[#999]"> · </span>
+                  <a
+                    href="https://velog.io/@meloncoder/posts"
+                    className="font-medium print:text-inherit"
+                  >
+                    Blog
+                  </a>
+                  <span className="text-[#999]"> → </span>
+                  <a
+                    href="https://resume-seven-beige.vercel.app"
+                    className="font-mono text-[11px] print:text-inherit"
+                  >
+                    resume-seven-beige.vercel.app
+                  </a>
+                </>
+              )}
             </p>
-            <a
-              href="https://resume-seven-beige.vercel.app"
-              className="text-sm text-[#444] font-medium"
-            >
-              https://resume-seven-beige.vercel.app
-            </a>
           </div>
 
           {/* Content */}
           <motion.div
-            className="relative z-10"
+            className="resume-print-root relative z-10"
             style={{
               transform: `perspective(1000px) rotateX(${rotateX}deg)`,
             }}
           >
             <Header />
             <About />
-            <Skills />
             <Experience />
-            <Education />
             <Projects />
+            <Skills />
+            <Education />
             <BlogPosts />
-            <Archive />
 
             {/* Last Updated */}
-            <p className="mt-12 pt-4 border-t border-[#ddd] dark:border-[#333] text-xs text-[#bbb] dark:text-[#555] text-right font-mono transition-colors duration-300">
+            <p className="mt-12 border-t border-[#ddd] pt-4 text-right font-mono text-xs text-[#bbb] transition-colors duration-300 print:mt-4 print:pt-2 print:text-[10px] dark:border-[#333] dark:text-[#555]">
               Last updated: 2026.03
             </p>
           </motion.div>
 
           {/* Page turn shadow effect */}
           <motion.div
-            className="absolute right-0 top-0 h-full w-1 bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.05)] to-transparent"
+            className="absolute right-0 top-0 h-full w-1 bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.05)] to-transparent print:hidden"
             style={{
               opacity: shadowIntensity,
             }}

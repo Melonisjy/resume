@@ -48,6 +48,36 @@ body {
   background: #0a0a0a;
 }
 
+/* 이력서 본문: <strong> 스캔 강조 (주변보다 진한 텍스트, 별도 포인트 색 없음) */
+.resume-content strong {
+  font-weight: 600;
+  color: #171717; /* neutral-900 */
+}
+
+.dark .resume-content strong {
+  color: #fff;
+}
+
+/* 번역 HTML(.resume-content) 안 링크만 — 수상 뱃지·헤더 등 다른 앵커와 분리 */
+.resume-content a {
+  color: rgb(217 119 6);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.resume-content a:hover {
+  text-decoration: underline;
+  color: rgb(180 83 9);
+}
+
+.dark .resume-content a {
+  color: rgb(251 191 36);
+}
+
+.dark .resume-content a:hover {
+  color: rgb(252 211 77);
+}
+
 h1,
 h2,
 h3,
@@ -189,34 +219,105 @@ h6 {
   border-top-color: #333;
 }
 
-/* Print Styles */
+/* Print Styles — PDF / 인쇄 (2p 목표: 밀도·여백·색 재현) */
 @media print {
-  /* 기본 리셋 */
+  @page {
+    margin: 6mm 8mm;
+  }
+
   body {
     background: white !important;
     color: #222 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
   }
 
-  /* 페이지 배경/그림자 제거, 여백 최적화 */
+  .resume-print-root {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  /* 배경·테두리·앰버 등 실제 색 인쇄 */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
   .min-h-screen {
     background: white !important;
     padding: 0 !important;
   }
 
-  /* A4 종이 컨테이너 그림자 제거 */
-  .min-h-screen > div > div {
+  .resume-paper,
+  .min-h-screen > div > div.resume-paper {
     box-shadow: none !important;
-    padding: 1.5rem !important;
+    padding: 1rem 1.1rem !important;
+    min-height: 0 !important;
   }
 
-  /* 불필요한 UI 요소 숨김 */
+  .resume-print-root section {
+    margin-bottom: 0.35rem !important;
+  }
+
+  /* Blog가 빈 페이지 말고 Education·Skills 뒤에 붙도록 */
+  #blog {
+    break-before: avoid-page;
+  }
+
+  .resume-print-root h2 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.35rem !important;
+    padding-top: 0 !important;
+  }
+
+  .resume-print-root h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .resume-print-root header h1 {
+    font-size: 1.6rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .resume-print-root header {
+    margin-bottom: 0.75rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-top: 0.25rem !important;
+  }
+
+  /* 기본 링크 파란색 제거 */
+  a,
+  a:visited {
+    color: #222 !important;
+    text-decoration: none !important;
+  }
+
+  /* Header 수상 뱃지: 전역 링크색보다 우선, 화면과 동일한 크기·두께로 PDF에도 유지 */
+  a.header-award-badge,
+  a.header-award-badge:link,
+  a.header-award-badge:visited {
+    color: #92400e !important; /* amber-800 */
+    background-color: #fef3c7 !important; /* amber-100 */
+    border: 2px solid #f59e0b !important; /* amber-500 */
+    font-size: 0.875rem !important; /* text-sm 14px */
+    line-height: 1.25rem !important;
+    padding: 0.25rem 0.75rem !important; /* py-1 px-3 */
+    text-decoration: none !important;
+  }
+
+  a.header-award-badge .font-mono {
+    color: #92400e !important; /* amber-800 */
+  }
+
   .print\:hidden {
     display: none !important;
   }
 
-  /* 프린트 전용 요소 표시 */
   .print\:block {
     display: block !important;
   }
@@ -225,24 +326,19 @@ h6 {
     display: inline !important;
   }
 
-  /* 섹션 간 페이지 브레이크 방지 */
-  section {
-    break-inside: avoid;
-  }
-
-  /* 링크 URL 표시하지 않음 (깔끔하게) */
   a::after {
     content: none !important;
   }
 
-  /* 애니메이션 제거 */
-  * {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
+  a[href]::after {
+    content: none !important;
   }
 
-  /* 다크모드 색상 강제 라이트 */
+  .resume-content strong {
+    color: #111 !important;
+    font-weight: 600 !important;
+  }
+
   .dark {
     --background: white;
     --foreground: #222;

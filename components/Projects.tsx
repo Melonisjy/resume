@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { translations } from "@/lib/i18n/translations";
 import { Language } from "@/lib/i18n/translations";
+import { resumeTextLinkClass } from "@/lib/resumeLinkClass";
 
 interface TranslatedProject {
   name: { ko: string; en: string };
@@ -17,7 +18,42 @@ interface TranslatedProject {
   github?: string;
 }
 
-function ProjectList({
+function ProjectLinks({
+  project,
+}: {
+  project: TranslatedProject;
+}) {
+  if (!project.link && !project.github) return null;
+  return (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+      {(project.link || project.github) && (
+        <span className="text-[#ccc] dark:text-[#444]">|</span>
+      )}
+      {project.link && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`text-xs ${resumeTextLinkClass}`}
+        >
+          Live ↗
+        </a>
+      )}
+      {project.github && (
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`text-xs ${resumeTextLinkClass}`}
+        >
+          GitHub ↗
+        </a>
+      )}
+    </div>
+  );
+}
+
+function FeaturedProjectList({
   projects,
   lang,
 }: {
@@ -25,7 +61,7 @@ function ProjectList({
   lang: Language;
 }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-5 md:space-y-6 print:space-y-2">
       {projects.map((project, index) => (
         <motion.div
           key={index}
@@ -33,48 +69,94 @@ function ProjectList({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: index * 0.05 }}
+          className="break-inside-avoid rounded-lg border border-[#e0ddd4] bg-[#fdfcfa] p-4 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition-colors duration-300 print:p-2 dark:border-[#333] dark:bg-[#161616] dark:shadow-none md:p-5"
         >
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1 mb-1">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-[#222] dark:text-[#f5f5f0] font-medium transition-colors duration-300">
+          <div className="mb-2 flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-medium text-[#222] transition-colors duration-300 dark:text-[#f5f5f0]">
                 {project.name[lang]}
               </span>
               {project.status && (
-                <span className="text-xs text-[#666] dark:text-[#aaa] border border-[#999] dark:border-[#555] px-1.5 py-0.5 rounded transition-colors duration-300">
+                <span className="rounded border border-[#999] px-1.5 py-0.5 text-xs text-[#666] transition-colors duration-300 dark:border-[#555] dark:text-[#aaa]">
                   {project.status[lang]}
                 </span>
               )}
               {project.award && (
-                <span className="text-xs text-[#222] dark:text-[#f5f5f0] font-medium transition-colors duration-300">
+                <span className="rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-950 dark:bg-amber-950/50 dark:text-amber-200">
                   🏆 {project.award[lang]}
                 </span>
               )}
             </div>
-            <span className="text-sm text-[#999] dark:text-[#666] font-mono transition-colors duration-300">
+            <span className="font-mono text-sm text-[#999] transition-colors duration-300 dark:text-[#666]">
               {project.period}
             </span>
           </div>
-
-          {/* Description */}
-          <p className="text-[#666] dark:text-[#aaa] text-sm mb-1 transition-colors duration-300">
+          <p className="mb-2 text-[15px] leading-loose text-[#555] transition-colors duration-300 dark:text-[#b8b8b0] md:text-base md:leading-relaxed print:text-sm print:leading-snug">
             {project.description[lang]}
           </p>
-
-          {/* Tech & Links */}
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <span className="text-xs text-[#888] dark:text-[#666] transition-colors duration-300">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+            <span className="text-xs text-[#888] transition-colors duration-300 dark:text-[#666]">
               {project.tech.join(" · ")}
             </span>
-            {(project.link || project.github) && (
-              <span className="text-[#ccc] dark:text-[#444]">|</span>
-            )}
+            <ProjectLinks project={project} />
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+function CompactProjectList({
+  projects,
+  lang,
+}: {
+  projects: readonly TranslatedProject[];
+  lang: Language;
+}) {
+  return (
+    <ul className="divide-y divide-[#e8e6e0] dark:divide-[#2a2a2a]">
+      {projects.map((project, index) => (
+        <motion.li
+          key={index}
+          initial={{ opacity: 0, x: -8 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.35, delay: index * 0.04 }}
+          className="flex flex-col gap-1.5 py-3 first:pt-0 md:flex-row md:items-baseline md:justify-between md:gap-4 md:py-2.5"
+        >
+          <div className="min-w-0 flex-1 space-y-1">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span className="text-sm font-medium text-[#222] dark:text-[#f5f5f0]">
+                {project.name[lang]}
+              </span>
+              {project.status && (
+                <span className="text-[10px] text-[#777] dark:text-[#888]">
+                  ({project.status[lang]})
+                </span>
+              )}
+              {project.award && (
+                <span className="text-[10px] font-medium text-amber-800 dark:text-amber-400">
+                  {project.award[lang]}
+                </span>
+              )}
+              <span className="font-mono text-xs text-[#aaa] dark:text-[#555]">
+                {project.period}
+              </span>
+            </div>
+            <p className="text-xs leading-relaxed text-[#666] dark:text-[#999] md:text-[13px]">
+              {project.description[lang]}
+            </p>
+            <span className="text-[11px] text-[#999] dark:text-[#666]">
+              {project.tech.join(" · ")}
+            </span>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 md:justify-end">
             {project.link && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
+                className={`text-[11px] ${resumeTextLinkClass}`}
               >
                 Live ↗
               </a>
@@ -84,15 +166,15 @@ function ProjectList({
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#666] dark:text-[#aaa] hover:text-[#222] dark:hover:text-[#f5f5f0] transition-colors"
+                className={`text-[11px] ${resumeTextLinkClass}`}
               >
                 GitHub ↗
               </a>
             )}
           </div>
-        </motion.div>
+        </motion.li>
       ))}
-    </div>
+    </ul>
   );
 }
 
@@ -102,46 +184,31 @@ export default function Projects() {
 
   return (
     <Section id="projects" title={t.title[lang]}>
-      <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
-        {/* 회사 프로젝트 */}
+      <div className="border-l-2 border-[#999] pl-4 transition-colors duration-300 dark:border-[#444] md:pl-6">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-8"
+          className="mb-2"
         >
-          <p className="text-[#666] dark:text-[#aaa] text-sm mb-4 italic transition-colors duration-300">
-            {t.companyLabel[lang]}
+          <p className="mb-4 text-sm italic text-[#666] transition-colors duration-300 dark:text-[#aaa]">
+            {t.featuredLabel[lang]}
           </p>
-          <ProjectList projects={t.companyProjects} lang={lang} />
+          <FeaturedProjectList projects={t.featuredProjects} lang={lang} />
         </motion.div>
 
-        {/* 팀 프로젝트 */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-8"
+          transition={{ duration: 0.5, delay: 0.08 }}
+          className="mt-10 border-t-2 border-[#c8c4bc] pt-8 transition-colors duration-300 print:mt-6 print:pt-5 dark:border-[#3d3d3d] md:mt-12 md:pt-10"
         >
-          <p className="text-[#666] dark:text-[#aaa] text-sm mb-4 italic transition-colors duration-300">
-            {t.teamLabel[lang]}
+          <p className="mb-3 text-sm italic text-[#666] transition-colors duration-300 dark:text-[#aaa]">
+            {t.otherLabel[lang]}
           </p>
-          <ProjectList projects={t.teamProjects} lang={lang} />
-        </motion.div>
-
-        {/* 개인 프로젝트 */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <p className="text-[#666] dark:text-[#aaa] text-sm mb-4 italic transition-colors duration-300">
-            {t.personalLabel[lang]}
-          </p>
-          <ProjectList projects={t.personalProjects} lang={lang} />
+          <CompactProjectList projects={t.otherProjects} lang={lang} />
         </motion.div>
       </div>
     </Section>
