@@ -165,7 +165,7 @@ export default function Home() {
 
             {/* Last Updated */}
             <p className="mt-12 border-t border-[#ddd] pt-4 text-right font-mono text-xs text-[#bbb] transition-colors duration-300 print:mt-4 print:pt-2 print:text-[10px] dark:border-[#333] dark:text-[#555]">
-              Last updated: 2026.03
+              Last updated: 2026.04
             </p>
           </motion.div>
 
