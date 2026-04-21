@@ -47,7 +47,7 @@ export default function Section({
         className="mb-3 flex items-center gap-2 font-heading text-2xl font-semibold text-[#222] transition-colors duration-300 print:mb-1.5 print:text-xl dark:text-[#f5f5f0] md:mb-4 md:text-4xl"
       >
         <span
-          className="inline-block h-5 w-[3px] shrink-0 rounded-sm bg-amber-500 print:bg-amber-600 dark:bg-amber-400"
+          className="inline-block h-5 w-[3px] shrink-0 rounded-sm bg-neutral-800 print:bg-neutral-700 dark:bg-neutral-300"
           aria-hidden
         />
         {title}

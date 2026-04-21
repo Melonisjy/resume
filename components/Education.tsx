@@ -28,7 +28,7 @@ function highlightAwardRank(text: string, lang: Language) {
       return (
         <>
           {text.slice(0, i)}
-          <strong className="font-semibold text-amber-800 dark:text-amber-300">
+          <strong className="font-semibold text-neutral-800 dark:text-neutral-200">
             {term}
           </strong>
           {text.slice(i + term.length)}
@@ -124,7 +124,7 @@ export default function Education() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                className={`break-inside-avoid rounded-lg border border-[#e5e2d9] border-l-[3px] border-l-amber-600 bg-[#faf9f5] px-3 py-3 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition-colors duration-300 print:px-2 print:py-1 dark:border-[#2f2f2f] dark:border-l-amber-500 dark:bg-[#141414] dark:shadow-none ${
+                className={`break-inside-avoid rounded-lg border border-[#e5e2d9] border-l-2 border-l-neutral-300 px-3 py-3 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition-colors duration-300 print:px-2 print:py-1 dark:border-[#2f2f2f] dark:border-l-neutral-600 dark:shadow-none ${
                   "hideInPrint" in award && award.hideInPrint
                     ? "print:hidden"
                     : ""
@@ -132,7 +132,7 @@ export default function Education() {
               >
                 <div className="flex items-start gap-3">
                   <span
-                    className="mt-0.5 shrink-0 text-amber-700 dark:text-amber-400"
+                    className="mt-0.5 shrink-0 text-neutral-700 dark:text-neutral-300"
                     aria-hidden
                   >
                     <TrophyIcon />
@@ -142,7 +142,7 @@ export default function Education() {
                       <span className="text-[15px] md:text-base font-semibold leading-snug text-[#1a1a1a] dark:text-[#f5f5f0] transition-colors duration-300">
                         {highlightAwardRank(award.title[lang], lang)}
                       </span>
-                      <span className="shrink-0 text-xs font-mono tabular-nums text-amber-900/70 dark:text-amber-200/80 sm:text-sm">
+                      <span className="shrink-0 text-xs font-mono tabular-nums text-neutral-700/80 dark:text-neutral-300/80 sm:text-sm">
                         {award.year}
                       </span>
                     </div>

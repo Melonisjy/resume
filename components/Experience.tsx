@@ -42,7 +42,7 @@ export default function Experience() {
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`font-heading font-semibold ${resumeTextLinkClass} ${
+                      className={`${resumeTextLinkClass} font-heading font-bold text-neutral-800 dark:text-neutral-200 ${
                         isNonDev ? "text-lg md:text-xl" : "text-2xl md:text-3xl"
                       }`}
                     >
@@ -100,7 +100,7 @@ export default function Experience() {
                     {exp.achievements.map((achievement, i) => (
                       <li
                         key={i}
-                        className={`block list-none break-inside-avoid overflow-visible border-l-2 border-solid border-[#fbbf24] pl-3 transition-colors duration-300 dark:border-[#f59e0b] ${
+                        className={`block list-none break-inside-avoid overflow-visible border-l-2 border-solid border-neutral-300 pl-3 transition-colors duration-300 dark:border-neutral-600 ${
                           isNonDev
                             ? "text-[15px] text-[#777] md:text-sm dark:text-[#888] print:text-sm"
                             : "text-[15px] text-[#444] md:text-base dark:text-[#c8c8c2] print:text-sm"

@@ -86,7 +86,7 @@ export default function Header() {
       </motion.h1>
 
       <div
-        className="mb-2 h-[2px] w-full bg-linear-to-r from-amber-400 via-amber-200 to-transparent opacity-70 print:hidden dark:from-amber-500 dark:via-amber-800 dark:to-transparent"
+        className="mb-2 h-[2px] w-full bg-linear-to-r from-neutral-400 via-neutral-200 to-transparent opacity-70 print:hidden dark:from-neutral-500 dark:via-neutral-700 dark:to-transparent"
         aria-hidden
       />
 

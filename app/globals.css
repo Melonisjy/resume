@@ -73,22 +73,22 @@ body {
 
 /* 번역 HTML(.resume-content) 안 링크만 — 수상 뱃지·헤더 등 다른 앵커와 분리 */
 .resume-content a {
-  color: rgb(217 119 6);
+  color: rgb(64 64 64);
   text-decoration: none;
   transition: color 150ms ease;
 }
 
 .resume-content a:hover {
   text-decoration: underline;
-  color: rgb(180 83 9);
+  color: rgb(23 23 23);
 }
 
 .dark .resume-content a {
-  color: rgb(251 191 36);
+  color: rgb(212 212 212);
 }
 
 .dark .resume-content a:hover {
-  color: rgb(252 211 77);
+  color: rgb(245 245 245);
 }
 
 h1,
@@ -312,7 +312,7 @@ h6 {
   /* 기본 링크 파란색 제거 */
   a,
   a:visited {
-    color: #222 !important;
+    color: #404040 !important;
     text-decoration: none !important;
   }
 

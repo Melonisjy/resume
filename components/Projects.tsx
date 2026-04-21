@@ -27,7 +27,7 @@ function ProjectBadge({
 }) {
   const badgeClass =
     variant === "award"
-      ? "rounded border border-amber-200 bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-800 transition-colors duration-300 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-300"
+      ? "rounded border border-neutral-300 bg-neutral-100 px-1.5 py-0.5 text-[10px] font-medium text-neutral-800 transition-colors duration-300 dark:border-neutral-600 dark:bg-neutral-900/40 dark:text-neutral-200"
       : "rounded border border-[#b8b4ab] bg-[#f5f3ee] px-1.5 py-0.5 text-[10px] text-[#6f6a5f] transition-colors duration-300 dark:border-[#4d4d4d] dark:bg-[#1d1d1d] dark:text-[#a8a39a]";
 
   return <span className={badgeClass}>{text}</span>;
