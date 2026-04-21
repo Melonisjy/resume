@@ -6,11 +6,11 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { translations } from "@/lib/i18n/translations";
 import { Language } from "@/lib/i18n/translations";
 
-/** 수상 등급 키워드만 색으로 강조 (전체 제목은 카드·굵기로 이미 눈에 띄게) */
+/** ?? ?? ???? ??? ?? (?? ??? ??�??? ?? ?? ??) */
 function highlightAwardRank(text: string, lang: Language) {
   const terms =
     lang === "ko"
-      ? ["최우수상", "우수 논문상", "대상", "장려상"]
+      ? ["????", "?? ???", "??", "???"]
       : [
           "Excellence Award",
           "Best Paper Award",
@@ -90,7 +90,7 @@ export default function Education() {
                     {edu.major[lang]}
                   </span>
                   <span className="text-xs text-[#999] dark:text-[#666] transition-colors duration-300">
-                    · {edu.status[lang]}
+                    � {edu.status[lang]}
                   </span>
                 </div>
                 <span className="text-sm text-[#999] dark:text-[#666] font-mono transition-colors duration-300">
@@ -154,3 +154,4 @@ export default function Education() {
     </Section>
   );
 }
+

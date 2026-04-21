@@ -18,11 +18,7 @@ interface TranslatedProject {
   github?: string;
 }
 
-function ProjectLinks({
-  project,
-}: {
-  project: TranslatedProject;
-}) {
+function ProjectLinks({ project }: { project: TranslatedProject }) {
   if (!project.link && !project.github) return null;
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -36,7 +32,7 @@ function ProjectLinks({
           rel="noopener noreferrer"
           className={`text-xs ${resumeTextLinkClass}`}
         >
-          Live ↗
+          Live
         </a>
       )}
       {project.github && (
@@ -46,7 +42,7 @@ function ProjectLinks({
           rel="noopener noreferrer"
           className={`text-xs ${resumeTextLinkClass}`}
         >
-          GitHub ↗
+          GitHub
         </a>
       )}
     </div>
@@ -83,7 +79,7 @@ function FeaturedProjectList({
               )}
               {project.award && (
                 <span className="rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-950 dark:bg-amber-950/50 dark:text-amber-200">
-                  🏆 {project.award[lang]}
+                  {project.award[lang]}
                 </span>
               )}
             </div>
@@ -91,9 +87,11 @@ function FeaturedProjectList({
               {project.period}
             </span>
           </div>
-          <p className="mb-2 text-[15px] leading-loose text-[#555] transition-colors duration-300 dark:text-[#b8b8b0] md:text-base md:leading-relaxed print:text-sm print:leading-snug">
-            {project.description[lang]}
-          </p>
+          <div className="max-w-3xl">
+            <p className="mb-2 text-[15px] leading-loose text-[#555] transition-colors duration-300 dark:text-[#b8b8b0] md:text-base md:leading-relaxed print:text-sm print:leading-snug whitespace-pre-line">
+              {project.description[lang]}
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
             <span className="text-xs text-[#888] transition-colors duration-300 dark:text-[#666]">
               {project.tech.join(" · ")}
@@ -143,9 +141,11 @@ function CompactProjectList({
                 {project.period}
               </span>
             </div>
-            <p className="text-xs leading-relaxed text-[#666] dark:text-[#999] md:text-[13px]">
-              {project.description[lang]}
-            </p>
+            <div className="max-w-2xl">
+              <p className="text-xs leading-relaxed text-[#666] dark:text-[#999] md:text-[13px]">
+                {project.description[lang]}
+              </p>
+            </div>
             <span className="text-[11px] text-[#999] dark:text-[#666]">
               {project.tech.join(" · ")}
             </span>
@@ -158,7 +158,7 @@ function CompactProjectList({
                 rel="noopener noreferrer"
                 className={`text-[11px] ${resumeTextLinkClass}`}
               >
-                Live ↗
+                Live
               </a>
             )}
             {project.github && (
@@ -168,7 +168,7 @@ function CompactProjectList({
                 rel="noopener noreferrer"
                 className={`text-[11px] ${resumeTextLinkClass}`}
               >
-                GitHub ↗
+                GitHub
               </a>
             )}
           </div>

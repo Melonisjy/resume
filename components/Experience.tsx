@@ -33,7 +33,9 @@ export default function Experience() {
               }`}
             >
               {/* Header */}
-              <div className={`flex flex-col gap-1 md:flex-row md:items-start md:justify-between ${isNonDev ? "mb-2" : "mb-4"}`}>
+              <div
+                className={`flex flex-col gap-1 md:flex-row md:items-start md:justify-between ${isNonDev ? "mb-2" : "mb-4"}`}
+              >
                 <div>
                   {link ? (
                     <a
@@ -41,9 +43,7 @@ export default function Experience() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`font-heading font-semibold ${resumeTextLinkClass} ${
-                        isNonDev
-                          ? "text-lg md:text-xl"
-                          : "text-2xl md:text-3xl"
+                        isNonDev ? "text-lg md:text-xl" : "text-2xl md:text-3xl"
                       }`}
                     >
                       {exp.company[lang]}{" "}
@@ -52,19 +52,23 @@ export default function Experience() {
                       </span>
                     </a>
                   ) : (
-                    <h3 className={`font-heading font-semibold transition-colors duration-300 ${
-                      isNonDev
-                        ? "text-lg md:text-xl text-[#555] dark:text-[#ccc]"
-                        : "text-2xl md:text-3xl text-[#222] dark:text-[#f5f5f0]"
-                    }`}>
+                    <h3
+                      className={`font-heading font-semibold transition-colors duration-300 ${
+                        isNonDev
+                          ? "text-lg md:text-xl text-[#555] dark:text-[#ccc]"
+                          : "text-2xl md:text-3xl text-[#222] dark:text-[#f5f5f0]"
+                      }`}
+                    >
                       {exp.company[lang]}
                     </h3>
                   )}
-                  <p className={`transition-colors duration-300 ${
-                    isNonDev
-                      ? "text-sm text-[#888] dark:text-[#777]"
-                      : "text-lg text-[#666] dark:text-[#aaa]"
-                  }`}>
+                  <p
+                    className={`transition-colors duration-300 ${
+                      isNonDev
+                        ? "text-sm text-[#888] dark:text-[#777]"
+                        : "text-lg text-[#666] dark:text-[#aaa]"
+                    }`}
+                  >
                     {exp.title[lang]}
                   </p>
                 </div>
@@ -74,17 +78,18 @@ export default function Experience() {
               </div>
 
               {/* Description */}
-              <p className={`transition-colors duration-300 ${
-                isNonDev
-                  ? "mb-2 text-sm leading-relaxed text-[#888] md:leading-7 dark:text-[#777] print:text-sm print:leading-snug"
-                  : "mb-4 text-[15px] leading-relaxed text-[#666] md:text-base md:leading-7 dark:text-[#aaa] print:text-sm print:leading-snug"
-              }`}>
+              <p
+                className={`transition-colors duration-300 ${
+                  isNonDev
+                    ? "mb-2 text-sm leading-relaxed text-[#888] md:leading-7 dark:text-[#777] print:text-sm print:leading-snug"
+                    : "mb-4 text-[15px] leading-relaxed text-[#666] md:text-base md:leading-7 dark:text-[#aaa] print:text-sm print:leading-snug"
+                }`}
+              >
                 {exp.description[lang]}
               </p>
 
               {/* Achievements */}
-              {"achievements" in exp &&
-                exp.achievements.length > 0 && (
+              {"achievements" in exp && exp.achievements.length > 0 && (
                 <div className={isNonDev ? "mb-2" : "mb-4"}>
                   {!isNonDev && (
                     <p className="text-sm text-[#999] dark:text-[#666] italic mb-2 transition-colors duration-300">
@@ -101,7 +106,7 @@ export default function Experience() {
                             : "text-[15px] text-[#444] md:text-base dark:text-[#c8c8c2] print:text-sm"
                         }`}
                       >
-                        <span className="block min-w-0 leading-relaxed md:leading-7 print:leading-snug">
+                        <span className="block min-w-0 max-w-3xl leading-7 print:leading-snug">
                           <span
                             className="resume-content"
                             dangerouslySetInnerHTML={{
@@ -113,7 +118,8 @@ export default function Experience() {
                               href={achievement.link as string}
                               className={`ml-1.5 inline text-xs sm:whitespace-nowrap ${resumeTextLinkClass}`}
                             >
-                              {"linkLabel" in achievement && achievement.linkLabel
+                              {"linkLabel" in achievement &&
+                              achievement.linkLabel
                                 ? `${(achievement.linkLabel as Record<string, string>)[lang]} ↗`
                                 : "↗"}
                             </a>
@@ -135,7 +141,9 @@ export default function Experience() {
                     >
                       {techItem}
                       {i < tech.length - 1 && (
-                        <span className="ml-2 text-[#ccc] dark:text-[#444]">·</span>
+                        <span className="ml-2 text-[#ccc] dark:text-[#444]">
+                          ·
+                        </span>
                       )}
                     </span>
                   ))}

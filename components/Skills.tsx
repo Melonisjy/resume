@@ -47,23 +47,25 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
-            {t.appliedLabel[lang]}
-          </p>
-          <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {t.applied[lang].map((skill, index) => (
-              <motion.span
-                key={skill}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.35 + index * 0.05 }}
-                className="text-[#444] dark:text-[#ddd] text-sm md:text-base transition-colors duration-300"
-              >
-                {skill}
-                {index < t.applied[lang].length - 1 && ","}
-              </motion.span>
-            ))}
+          <div className="md:max-w-2xl">
+            <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
+              {t.appliedLabel[lang]}
+            </p>
+            <div className="flex flex-wrap gap-x-3 gap-y-2">
+              {t.applied[lang].map((skill, index) => (
+                <motion.span
+                  key={skill}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.35 + index * 0.05 }}
+                  className="text-[#444] dark:text-[#ddd] text-sm md:text-base transition-colors duration-300"
+                >
+                  {skill}
+                  {index < t.applied[lang].length - 1 && ","}
+                </motion.span>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -74,23 +76,25 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.45 }}
         >
-          <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
-            {t.exposureLabel[lang]}
-          </p>
-          <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {t.exposure[lang].map((skill, index) => (
-              <motion.span
-                key={skill}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.5 + index * 0.04 }}
-                className="text-[#666] dark:text-[#aaa] transition-colors duration-300"
-              >
-                {skill}
-                {index < t.exposure[lang].length - 1 && ","}
-              </motion.span>
-            ))}
+          <div className="md:max-w-2xl">
+            <p className="text-[#666] dark:text-[#aaa] text-sm mb-3 italic transition-colors duration-300">
+              {t.exposureLabel[lang]}
+            </p>
+            <div className="flex flex-wrap gap-x-3 gap-y-2">
+              {t.exposure[lang].map((skill, index) => (
+                <motion.span
+                  key={skill}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.5 + index * 0.04 }}
+                  className="text-[#666] dark:text-[#aaa] transition-colors duration-300"
+                >
+                  {skill}
+                  {index < t.exposure[lang].length - 1 && ","}
+                </motion.span>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

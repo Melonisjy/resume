@@ -63,6 +63,14 @@ body {
   color: #fff;
 }
 
+/* 한글 단어 중간 줄바꿈 방지 + 문장부호 기준 줄바꿈 개선 */
+.resume-content p,
+.resume-content li {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
 /* 번역 HTML(.resume-content) 안 링크만 — 수상 뱃지·헤더 등 다른 앵커와 분리 */
 .resume-content a {
   color: rgb(217 119 6);

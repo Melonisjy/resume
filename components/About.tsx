@@ -13,14 +13,16 @@ export default function About() {
     <Section id="about" title={t.title[lang]}>
       <div className="border-l-2 border-[#999] dark:border-[#444] pl-4 md:pl-6 transition-colors duration-300">
         {/* Intro */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="resume-content text-[#555] dark:text-[#bbb] leading-relaxed whitespace-pre-line transition-colors duration-300"
-          dangerouslySetInnerHTML={{ __html: t.intro[lang] }}
-        />
+        <div className="max-w-2xl">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="resume-content text-[#555] dark:text-[#bbb] leading-relaxed whitespace-pre-line transition-colors duration-300"
+            dangerouslySetInnerHTML={{ __html: t.intro[lang] }}
+          />
+        </div>
       </div>
     </Section>
   );
