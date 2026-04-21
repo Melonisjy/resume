@@ -61,6 +61,7 @@ export default function Header() {
   const { lang } = useLanguage();
   const t = translations.header;
   const nameChars = t.name[lang];
+  const taglineLines = t.tagline[lang].split("\n");
 
   return (
     <motion.header
@@ -126,20 +127,27 @@ export default function Header() {
         ))}
       </motion.div>
 
-      {/* 3. Divider */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
+      {/* 3. Tagline */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 2.9 }}
-        className="h-px bg-[#999] dark:bg-[#444] origin-left mb-4 transition-colors duration-300"
-      />
+        className="mt-3 border-b border-[#ddd] pb-3 text-sm leading-relaxed text-[#777] transition-colors duration-300 print:text-xs dark:border-[#333] dark:text-[#999] md:text-base print:md:text-sm"
+      >
+        {taglineLines.map((line, i) => (
+          <span key={`${lang}-tagline-${i}`}>
+            {line.trim()}
+            {i < taglineLines.length - 1 ? <br /> : null}
+          </span>
+        ))}
+      </motion.p>
 
       {/* 4. Contact — 가장 작은 유틸리티 계층 */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 3.1 }}
-        className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#888] dark:text-[#777] transition-colors duration-300"
+        className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#888] transition-colors duration-300 dark:text-[#777]"
       >
         <a
           href="mailto:dhy2458@gmail.com"

@@ -6,6 +6,10 @@ export const translations = {
       ko: ["이", "주", "열"],
       en: ["Joo", "yeol Lee"],
     },
+    tagline: {
+      ko: "UI/UX와 성능 최적화를 함께 고려하고, \n 새로운 도메인에서도 빠르게 적응하여 \n 운영 비용까지 줄이는 개발을 지향합니다..",
+      en: "I consider both UI/UX and performance optimization together, \n adapt quickly even in unfamiliar domains, \n and pursue development that reduces operational costs as well.",
+    },
     awards: [
       {
         ko: "블록체인스쿨 3기 대상",
@@ -14,11 +18,12 @@ export const translations = {
       },
       {
         ko: "캡스톤 최우수상",
-        en: "Capstone Best Award",
+        en: "Capstone Excellence Award",
         year: "2022",
       },
     ],
   },
+  /*
   about: {
     title: { ko: "About", en: "About" },
     intro: {
@@ -26,6 +31,7 @@ export const translations = {
       en: "A frontend engineer across blockchain and SaaS—I ground performance in measurable outcomes.\nAt JEFF, I designed a monorepo and shared components; at Elim, a safety-diagnosis SaaS, I cut key page bundles <strong>47–54%</strong> in Next.js with bundle-analyzer and dynamic imports.\nI led performance tuning and structural refactors that reduced load and operational cost.\nI weigh UX and business impact together when prioritizing, and I gravitate to work like bundle optimization that improves perceived speed and cost at once.",
     },
   },
+  */
   skills: {
     title: { ko: "Skills", en: "Skills" },
     categories: [
@@ -63,7 +69,7 @@ export const translations = {
         period: { ko: "2026.01 ~ 2026.04", en: "Jan 2026 ~ Apr 2026" },
         description: {
           ko: "사내 안전진단 웹 기반 툴의 프론트엔드 개발 및 유지보수",
-          en: "Frontend development and maintenance of in-house safety diagnosis web tool — project-based contract, outcome-focused engagement",
+          en: "Frontend development and maintenance for an in-house web-based safety diagnosis tool",
         },
         achievements: [
           {
@@ -120,7 +126,7 @@ export const translations = {
         period: { ko: "2023.08 ~ 2024.11", en: "Aug 2023 ~ Nov 2024" },
         description: {
           ko: "블록체인 기반 게임 플랫폼 프론트엔드 · NFT 마켓플레이스·모노레포·공통 컴포넌트 주도",
-          en: "Blockchain gaming platform frontend — Led NFT marketplace work, monorepo adoption, and shared component system",
+          en: "Frontend development for a blockchain gaming platform — led NFT marketplace work, monorepo adoption, and a shared component system",
         },
         achievements: [
           {
@@ -137,7 +143,7 @@ export const translations = {
           },
           {
             ko: "<strong>ApexChart 기반 백오피스 대시보드를 구축해 운영팀의 모니터링 효율을 높였습니다.</strong><br />트랜잭션 지표를 빠르게 확인할 수 있었다는 피드백을 받았습니다.",
-            en: "<strong>I built an ApexChart-based back-office dashboard that improved ops self-checks and monitoring efficiency.</strong> Ops needed to scan transaction time series and multiple KPIs in one view, and combining line/bar/area charts matched blockchain telemetry well (based on team feedback).",
+            en: "<strong>I built an ApexChart-based back-office dashboard that improved the operations team's monitoring efficiency.</strong> The team reported that transaction metrics became faster and easier to check.",
           },
           {
             ko: "<strong>그랜드 오픈 일정 내 랜딩·상점 구매·REST API 연동 등 우선순위를 정하여 기한 내 개발했습니다.</strong><br /> 일정 제약이 큰 상황에서 브레이크포인트별 타이포 및 여백 스케일을 맞춰 반응형 레이아웃도 함께 작업하였습니다.",
@@ -235,7 +241,7 @@ export const translations = {
         name: { ko: "INSURSAND", en: "INSURSAND" },
         description: {
           ko: "블록체인 자산 폭락을 보며 온체인 보험의 필요성을 직접 느껴 시작했습니다. \n 스마트컨트랙트 상태는 Web3.js로, 화면·피드백은 React로 분리해 복잡한 로직을 사용자가 오해 없이 쓰도록 설계했습니다.",
-          en: "2-person team · ~6 weeks (~1.5 months). The hardest problem was abstracting intricate DeFi insurance contract logic into UI flows that kept irreversible actions legible. As team lead I standardized on React, Solidity, and Web3.js—Web3 for on-chain reads/writes and React for cohesive screens, forms, and feedback. That direction won the Likelion Blockchain School Grand Prize.",
+          en: "After seeing sharp drops in blockchain assets, I started this project to address the need for on-chain insurance. \n I used Web3.js for smart-contract state handling and React for UI and feedback, so users could work through complex logic without confusion.",
         },
         tech: ["React", "Solidity", "Web3.js", "Tailwind CSS"],
         period: "2023",
@@ -250,7 +256,7 @@ export const translations = {
         name: { ko: "킥-인 (KIKIN)", en: "KIKIN" },
         description: {
           ko: "친구들과 풋살 일정을 카톡 대신 전용 앱으로 관리하고 싶어 만들어본 사이드 프로젝트입니다. \n Supabase Realtime으로 일정 및 공지를 실시간으로 공유하고 팀 생성 및 출석 투표 기능을 개발하였습니다.",
-          en: "Our futsal team juggled schedules and attendance through KakaoTalk threads and ad-hoc polls, so context kept scattering—I built KIKIN from that day-to-day friction. Announcements and schedule edits propagate via Supabase Realtime subscriptions for quick in-app updates without leaning on push alone; team setup, invites, attendance votes, and notices are wired while development continues. Core flows—team creation, invites, attendance voting, and announcements—are live; I am refining Realtime notification behavior and improving UI and mobile usability.",
+          en: "I built this side project because my friends and I wanted to manage futsal schedules in a dedicated app instead of KakaoTalk. \n Using Supabase Realtime, I implemented live schedule/announcement sharing, team creation, and attendance voting.",
         },
         tech: [
           "Next.js",
@@ -268,7 +274,7 @@ export const translations = {
         name: { ko: "Resume", en: "Resume" },
         description: {
           ko: "i18n, MDX 블로그, @media print PDF 출력까지 한 흐름으로 구현한 이력서 페이지입니다.",
-          en: "More than a CV page, it is a small product demo—object-based i18n, an MDX blog on App Router static generation, and PDF-oriented layout via print utilities and @media print. Export hides chrome and tunes typography and spacing for a clean A4 read; the resume is intentionally the portfolio artifact itself.",
+          en: "A resume page built as one cohesive flow, including i18n, an MDX blog, and PDF output with @media print.",
         },
         tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "MDX"],
         period: "2026",
