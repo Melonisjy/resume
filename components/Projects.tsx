@@ -18,6 +18,21 @@ interface TranslatedProject {
   github?: string;
 }
 
+function ProjectBadge({
+  text,
+  variant,
+}: {
+  text: string;
+  variant: "status" | "award";
+}) {
+  const badgeClass =
+    variant === "award"
+      ? "rounded border border-amber-200 bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-800 transition-colors duration-300 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-300"
+      : "rounded border border-[#b8b4ab] bg-[#f5f3ee] px-1.5 py-0.5 text-[10px] text-[#6f6a5f] transition-colors duration-300 dark:border-[#4d4d4d] dark:bg-[#1d1d1d] dark:text-[#a8a39a]";
+
+  return <span className={badgeClass}>{text}</span>;
+}
+
 function ProjectLinks({ project }: { project: TranslatedProject }) {
   if (!project.link && !project.github) return null;
   return (
@@ -73,14 +88,10 @@ function FeaturedProjectList({
                 {project.name[lang]}
               </span>
               {project.status && (
-                <span className="rounded border border-[#999] px-1.5 py-0.5 text-xs text-[#666] transition-colors duration-300 dark:border-[#555] dark:text-[#aaa]">
-                  {project.status[lang]}
-                </span>
+                <ProjectBadge text={project.status[lang]} variant="status" />
               )}
               {project.award && (
-                <span className="rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-950 dark:bg-amber-950/50 dark:text-amber-200">
-                  {project.award[lang]}
-                </span>
+                <ProjectBadge text={project.award[lang]} variant="award" />
               )}
             </div>
             <span className="font-mono text-sm text-[#999] transition-colors duration-300 dark:text-[#666]">
@@ -94,7 +105,7 @@ function FeaturedProjectList({
           </div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
             <span className="text-xs text-[#888] transition-colors duration-300 dark:text-[#666]">
-              {project.tech.join(" · ")}
+              {project.tech.join(" | ")}
             </span>
             <ProjectLinks project={project} />
           </div>
@@ -128,14 +139,10 @@ function CompactProjectList({
                 {project.name[lang]}
               </span>
               {project.status && (
-                <span className="text-[10px] text-[#777] dark:text-[#888]">
-                  ({project.status[lang]})
-                </span>
+                <ProjectBadge text={project.status[lang]} variant="status" />
               )}
               {project.award && (
-                <span className="text-[10px] font-medium text-amber-800 dark:text-amber-400">
-                  {project.award[lang]}
-                </span>
+                <ProjectBadge text={project.award[lang]} variant="award" />
               )}
               <span className="font-mono text-xs text-[#aaa] dark:text-[#555]">
                 {project.period}
@@ -147,7 +154,7 @@ function CompactProjectList({
               </p>
             </div>
             <span className="text-[11px] text-[#999] dark:text-[#666]">
-              {project.tech.join(" · ")}
+              {project.tech.join(" | ")}
             </span>
           </div>
           <div className="flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 md:justify-end">

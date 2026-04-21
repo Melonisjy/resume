@@ -6,11 +6,16 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { translations } from "@/lib/i18n/translations";
 import { Language } from "@/lib/i18n/translations";
 
-/** ?? ?? ???? ??? ?? (?? ??? ??�??? ?? ?? ??) */
+/** Highlight award-rank keywords in award titles (first match only). */
 function highlightAwardRank(text: string, lang: Language) {
   const terms =
     lang === "ko"
-      ? ["????", "?? ???", "??", "???"]
+      ? [
+          "\uCD5C\uC6B0\uC218\uC0C1",
+          "\uC6B0\uC218 \uB17C\uBB38\uC0C1",
+          "\uB300\uC0C1",
+          "\uC7A5\uB824\uC0C1",
+        ]
       : [
           "Excellence Award",
           "Best Paper Award",
@@ -90,7 +95,7 @@ export default function Education() {
                     {edu.major[lang]}
                   </span>
                   <span className="text-xs text-[#999] dark:text-[#666] transition-colors duration-300">
-                    � {edu.status[lang]}
+                    {edu.status[lang]}
                   </span>
                 </div>
                 <span className="text-sm text-[#999] dark:text-[#666] font-mono transition-colors duration-300">
@@ -154,4 +159,3 @@ export default function Education() {
     </Section>
   );
 }
-

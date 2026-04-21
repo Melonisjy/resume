@@ -22,7 +22,7 @@ export const translations = {
   about: {
     title: { ko: "About", en: "About" },
     intro: {
-      ko: "블록체인·SaaS를 아우르며, 성능을 수치로 다루는 프론트엔드입니다.\n블록체인 플랫폼(JEFF)에서는 모노레포와 공통 컴포넌트를 설계했고,\n 안전진단회사 (엘림)에서는 bundle-analyzer와 dynamic import로 페이지 번들을 <strong>47~54%</strong> 줄였습니다.\n성능 최적화와 구조 정리로 로딩·운영 비용을 낮추는 일을 주도했습니다.\nUX와 비즈니스 가치를 함께 두며, 성능 최적화와 운영 비용을 동시에 줄이는 작업을 선호합니다.",
+      ko: "UI/UX와 성능 최적화를 함께 고려하고, \n 새로운 도메인에서도 빠르게 적응하여 \n 운영 비용까지 줄이는 개발을 지향합니다.",
       en: "A frontend engineer across blockchain and SaaS—I ground performance in measurable outcomes.\nAt JEFF, I designed a monorepo and shared components; at Elim, a safety-diagnosis SaaS, I cut key page bundles <strong>47–54%</strong> in Next.js with bundle-analyzer and dynamic imports.\nI led performance tuning and structural refactors that reduced load and operational cost.\nI weigh UX and business impact together when prioritizing, and I gravitate to work like bundle optimization that improves perceived speed and cost at once.",
     },
   },
@@ -67,7 +67,7 @@ export const translations = {
         },
         achievements: [
           {
-            ko: "<strong>bundle-analyzer</strong>로 @fullcalendar·konva 병목을 발견하여 성능을 개선하였습니다.</strong><br /> 불필요한 페이지까지 동일 청크로 묶이던 문제가 원인이었고, 배포 속도도 개선되었습니다 (팀 피드백 기반).",
+            ko: "<strong>bundle-analyzer</strong>로 @fullcalendar·konva 병목을 발견하여 성능을 개선하였습니다. (번들 사이즈 약 50% 감소)</strong><br /> 불필요한 페이지까지 동일 청크로 묶이던 문제가 원인이었고, 배포 속도도 개선되었습니다 (팀 피드백 기반).",
             en: "I identified @fullcalendar/Konva bottlenecks with <strong>bundle-analyzer</strong> and applied dynamic imports, reducing key page bundles by <strong>47–54%</strong>. The root issue was shared chunks being loaded on unnecessary pages after outsourcing, and perceived speed and deploy efficiency improved as well (based on team feedback).",
             link: "/blog/nextjs-bundle-size-optimization",
             linkLabel: {
