@@ -216,7 +216,6 @@ export const translations = {
           en: "Physical Layer Security in Optical Transmission using Neural Networks",
         },
         year: "2022",
-        hideInPrint: true,
       },
       {
         title: {
@@ -228,7 +227,6 @@ export const translations = {
           en: "Dodamdodam / ML-based Diet Management App",
         },
         year: "2021",
-        hideInPrint: true,
       },
     ],
   },
