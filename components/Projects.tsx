@@ -1,7 +1,7 @@
 "use client";
 
 import Section from "./Section";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { translations } from "@/lib/i18n/translations";
 import { Language } from "@/lib/i18n/translations";
@@ -45,9 +45,12 @@ function ProjectLinks({ project }: { project: TranslatedProject }) {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-xs ${resumeTextLinkClass}`}
+          className={`group text-xs ${resumeTextLinkClass}`}
         >
-          Live
+          Live{" "}
+          <span className="inline-block transition-transform duration-150 group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">
+            {"\u2197"}
+          </span>
         </a>
       )}
       {project.github && (
@@ -55,9 +58,12 @@ function ProjectLinks({ project }: { project: TranslatedProject }) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-xs ${resumeTextLinkClass}`}
+          className={`group text-xs ${resumeTextLinkClass}`}
         >
-          GitHub
+          GitHub{" "}
+          <span className="inline-block transition-transform duration-150 group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">
+            {"\u2197"}
+          </span>
         </a>
       )}
     </div>
@@ -67,20 +73,42 @@ function ProjectLinks({ project }: { project: TranslatedProject }) {
 function FeaturedProjectList({
   projects,
   lang,
+  shouldReduceMotion,
 }: {
   projects: readonly TranslatedProject[];
   lang: Language;
+  shouldReduceMotion: boolean;
 }) {
   return (
-    <div className="space-y-5 md:space-y-6 print:space-y-2">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: shouldReduceMotion ? 0 : 0.08 },
+        },
+      }}
+      className="space-y-5 md:space-y-6 print:space-y-2"
+    >
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, x: -10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: index * 0.05 }}
-          className="break-inside-avoid rounded-lg border border-[#e0ddd4] bg-[#fdfcfa] p-4 shadow-[0_1px_0_rgba(0,0,0,0.04)] transition-colors duration-300 print:p-2 dark:border-[#333] dark:bg-[#161616] dark:shadow-none md:p-5"
+          variants={{
+            hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 12 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: shouldReduceMotion ? 0 : 0.35,
+                ease: "easeOut",
+              },
+            },
+          }}
+          whileHover={shouldReduceMotion ? undefined : { y: -2 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          className="break-inside-avoid rounded-lg border border-[#e0ddd4] bg-[#fdfcfa] p-4 shadow-[0_1px_0_rgba(0,0,0,0.04)] hover:shadow-sm hover:border-neutral-300 dark:hover:border-neutral-600 transition-shadow transition-colors duration-200 print:p-2 dark:border-[#333] dark:bg-[#161616] dark:shadow-none md:p-5"
         >
           <div className="mb-2 flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-wrap items-center gap-2">
@@ -111,7 +139,7 @@ function FeaturedProjectList({
           </div>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
@@ -163,9 +191,12 @@ function CompactProjectList({
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-[11px] ${resumeTextLinkClass}`}
+                className={`group text-[11px] ${resumeTextLinkClass}`}
               >
-                Live
+                Live{" "}
+                <span className="inline-block transition-transform duration-150 group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">
+                  {"\u2197"}
+                </span>
               </a>
             )}
             {project.github && (
@@ -173,9 +204,12 @@ function CompactProjectList({
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-[11px] ${resumeTextLinkClass}`}
+                className={`group text-[11px] ${resumeTextLinkClass}`}
               >
-                GitHub
+                GitHub{" "}
+                <span className="inline-block transition-transform duration-150 group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">
+                  {"\u2197"}
+                </span>
               </a>
             )}
           </div>
@@ -187,6 +221,7 @@ function CompactProjectList({
 
 export default function Projects() {
   const { lang } = useLanguage();
+  const shouldReduceMotion = useReducedMotion() ?? false;
   const t = translations.projects;
 
   return (
@@ -202,7 +237,11 @@ export default function Projects() {
           <p className="mb-4 text-sm italic text-[#666] transition-colors duration-300 dark:text-[#aaa]">
             {t.featuredLabel[lang]}
           </p>
-          <FeaturedProjectList projects={t.featuredProjects} lang={lang} />
+          <FeaturedProjectList
+            projects={t.featuredProjects}
+            lang={lang}
+            shouldReduceMotion={shouldReduceMotion}
+          />
         </motion.div>
 
         <motion.div
@@ -215,7 +254,10 @@ export default function Projects() {
           <p className="mb-3 text-sm italic text-[#666] transition-colors duration-300 dark:text-[#aaa]">
             {t.otherLabel[lang]}
           </p>
-          <CompactProjectList projects={t.otherProjects} lang={lang} />
+          <CompactProjectList
+            projects={t.otherProjects}
+            lang={lang}
+          />
         </motion.div>
       </div>
     </Section>

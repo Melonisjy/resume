@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { translations } from "@/lib/i18n/translations";
 import { resumeTextLinkClass } from "@/lib/resumeLinkClass";
@@ -23,66 +23,41 @@ function TrophyMicro({ className }: { className?: string }) {
   );
 }
 
-const SignatureText = ({
-  children,
-  delay,
-}: {
-  children: string;
-  delay: number;
-}) => {
-  return (
-    <motion.span
-      className="inline-block relative"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.1, delay }}
-    >
-      <motion.span
-        className="inline-block text-[#222] dark:text-[#f5f5f0] transition-colors duration-300"
-        initial={{
-          clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
-        }}
-        animate={{
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        }}
-        transition={{
-          duration: 0.7,
-          delay: delay + 0.05,
-          ease: [0.4, 0, 0.2, 1],
-        }}
-      >
-        {children}
-      </motion.span>
-    </motion.span>
-  );
-};
-
 export default function Header() {
   const { lang } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
   const t = translations.header;
-  const nameChars = t.name[lang];
   const taglineLines = t.tagline[lang].split("\n");
+  const fadeUp = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : -6 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.35,
+        delay: shouldReduceMotion ? 0 : i * 0.08,
+        ease: "easeOut" as const,
+      },
+    }),
+  };
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      initial={shouldReduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
       className="mb-6 pb-6 pt-4 transition-colors duration-300 print:mb-4 print:pb-3 print:pt-2 md:mb-10 md:pb-8 md:pt-6"
     >
       {/* 1. Name — 가장 크고 강한 계층 */}
       <motion.h1
-        key={lang}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.1 }}
+        key={`name-${lang}`}
+        custom={0}
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
         className="font-heading text-4xl font-extrabold text-[#222] transition-colors duration-300 print:text-[1.6rem] dark:text-[#f5f5f0] md:text-6xl"
       >
-        {nameChars.map((char, i) => (
-          <SignatureText key={`${lang}-${i}`} delay={0.05 + i * 0.8}>
-            {char}
-          </SignatureText>
-        ))}
+        {t.name[lang]}
       </motion.h1>
 
       <div
@@ -92,9 +67,11 @@ export default function Header() {
 
       {/* 2. Role — 그라디언트 아래, 보조 계층 */}
       <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 2.7 }}
+        key={`role-${lang}`}
+        custom={1}
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
         className="mb-4 text-lg text-[#666] transition-colors duration-300 print:mb-2 print:mt-1 print:text-sm dark:text-[#aaa]"
       >
         Frontend Developer
@@ -102,9 +79,11 @@ export default function Header() {
 
       {/* 수상 하이라이트 → Education 앵커 */}
       <motion.div
-        initial={{ opacity: 0, y: 6 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, delay: 2.78 }}
+        key={`awards-${lang}`}
+        custom={2}
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
         className="mb-3 flex flex-wrap gap-3 print:mb-2 print:gap-2"
       >
         {t.awards.map((award, i) => (
@@ -129,9 +108,11 @@ export default function Header() {
 
       {/* 3. Tagline */}
       <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 2.9 }}
+        key={`tagline-${lang}`}
+        custom={3}
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
         className="mt-3 border-b border-[#ddd] pb-3 text-sm leading-relaxed text-[#777] transition-colors duration-300 print:text-xs dark:border-[#333] dark:text-[#999] md:text-base print:md:text-sm"
       >
         {taglineLines.map((line, i) => (
@@ -144,9 +125,10 @@ export default function Header() {
 
       {/* 4. Contact — 가장 작은 유틸리티 계층 */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 3.1 }}
+        custom={4}
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
         className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#888] transition-colors duration-300 dark:text-[#777]"
       >
         <a
