@@ -28,34 +28,24 @@ export const translations = {
   },
   skills: {
     title: { ko: "Skills", en: "Skills" },
-    primaryLabel: { ko: "주력 —", en: "Primary —" },
-    appliedLabel: { ko: "활용 —", en: "Applied —" },
-    exposureLabel: { ko: "경험 —", en: "Exposure —" },
-    primary: ["JavaScript", "TypeScript", "React", "Next.js"],
-    applied: {
-      ko: [
-        "Zustand (엘림)",
-        "TanStack Query (엘림)",
-        "Tailwind CSS (엘림·킥-인)",
-        "Sass (JEFF)",
-        "Redux (JEFF)",
-        "Cursor AI (킥-인·Nuvo)",
-        "Web3.js (JEFF)",
-      ],
-      en: [
-        "Zustand (Elim)",
-        "TanStack Query (Elim)",
-        "Tailwind CSS (Elim, KIKIN)",
-        "Sass (JEFF)",
-        "Redux (JEFF)",
-        "Cursor AI (KIKIN, Nuvo)",
-        "Web3.js (JEFF)",
-      ],
-    },
-    exposure: {
-      ko: ["Supabase (킥-인·Nuvo)", "Monorepo (JEFF)"],
-      en: ["Supabase (KIKIN, Nuvo)", "Monorepo (JEFF)"],
-    },
+    categories: [
+      {
+        label: { ko: "언어", en: "Language" },
+        items: ["JavaScript", "TypeScript"],
+      },
+      {
+        label: { ko: "프레임워크", en: "Framework" },
+        items: ["React", "Next.js"],
+      },
+      {
+        label: { ko: "스타일", en: "Style" },
+        items: ["Tailwind CSS", "Sass"],
+      },
+      {
+        label: { ko: "상태관리", en: "State" },
+        items: ["Zustand", "TanStack Query", "Redux"],
+      },
+    ],
   },
   experience: {
     title: { ko: "Experience", en: "Experience" },
